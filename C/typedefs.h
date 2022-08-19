@@ -1,6 +1,6 @@
 
-#ifndef PREPROCESSOR_H
-#define PREPROCESSOR_H
+#ifndef TYPEDEF_H
+#define TYPEDEF_H
 
 typedef unsigned char u8_t;
 typedef unsigned short int u16_t;

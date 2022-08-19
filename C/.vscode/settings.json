@@ -1,6 +1,7 @@
 {
     "files.associations": {
         "stdio.h": "c",
-        "preprocessor.h": "c"
+        "preprocessor.h": "c",
+        "DMA.C": "cpp"
     }
 }
