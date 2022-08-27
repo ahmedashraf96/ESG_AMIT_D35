@@ -1,0 +1,4 @@
+git remote set-url origin https://username:token@github.com/username/repository.git
+
+
+git remote set-url origin https://ahmedashraf96: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@github.com/ahmedashraf96/ESG-D35-Tooling.git
