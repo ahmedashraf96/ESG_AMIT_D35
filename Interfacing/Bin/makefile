@@ -7,14 +7,17 @@
 # Include directories
 INC_DIR := -I../LIB
 INC_DIR += -I../MCAL/MDIO
+INC_DIR += -I../HAL/HLED
 
 # C source files
 C_FILES := ../main.c
 C_FILES += ../MCAL/MDIO/MDIO_program.c
+C_FILES += ../HAL/HLED/HLED_program.c
 
 # Object files
 OBJ_FILES := main.o
 OBJ_FILES += MDIO_program.o
+OBJ_FILES += HLED_program.o
 
 # AVR Controller configuration
 CONTROLLER := atmega32

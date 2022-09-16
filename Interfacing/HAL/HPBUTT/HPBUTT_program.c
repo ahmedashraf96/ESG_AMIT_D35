@@ -1,5 +1,5 @@
 /**
- * @file    MDIO_program.c
+ * @file    MDIO_interface.h
  * @author  Ahmed Ashraf (ahmedashrafelnaqeeb@gmail.com)
  * @brief   This file contains logical implementation related to DIO module
  * @version 1.0
