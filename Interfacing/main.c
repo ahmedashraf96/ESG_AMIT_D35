@@ -5,17 +5,24 @@
 
 int main(void)
 {
+    u8_t button_value;
+    
     mdio_setPinStatus(PORTC, PIN2, OUTPUT);
+    mdio_setPinStatus(PORTD, PIN2, INPUT_FLOAT);
 
     while(1)
     {
-        mdio_setPinValue(PORTC, PIN2, HIGH);
-
-        _delay_ms(1000);
-
-        mdio_setPinValue(PORTC, PIN2, LOW);
-
-        _delay_ms(1000);
+        mdio_getPinValue(PORTD, PIN2, &button_value);
+       
+        if(button_value == HIGH)
+        {
+            _delay_ms(200);
+            mdio_togglePinValue(PORTC, PIN2 | PIN7);
+        }
+        else
+        {
+            /*Do nothing*/            
+        }
     }
 
     return 0;
