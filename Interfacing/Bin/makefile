@@ -4,14 +4,37 @@
 #Date:      9-9-2022
 #Version:   v1.0
 
-all: main.c clean main.hex
+# Include directories
+INC_DIR := -I../LIB
+INC_DIR += -I../MCAL/MDIO
+
+# C source files
+C_FILES := ../main.c
+C_FILES += ../MCAL/MDIO/MDIO_program.c
+
+# Object files
+OBJ_FILES := main.o
+OBJ_FILES += MDIO_program.o
+
+# AVR Controller configuration
+CONTROLLER := atmega32
+CONTROLLER_CLK := 16000000
+
+# Compiler configuration variables
+CC := avr-gcc
+COMPILER_OPTIONS := -mmcu=$(CONTROLLER) -DF_CPU=$(CONTROLLER_CLK) -Wall -Os $(INC_DIR)
+
+all: $(C_FILES) clean main.hex
 
 main.elf:
-	avr-gcc -mmcu=atmega32 -DF_CPU=16000000 -Wall -Os -c main.c
-	avr-gcc -Wl,-Map=main.map -mmcu=atmega32 main.o -o main.elf
+	@echo "Compiling C files......."
+	@$(CC) $(COMPILER_OPTIONS) -c $(C_FILES)
+	@echo "Linking C files......."
+	@$(CC) -Wl,-Map=main.map -mmcu=$(CONTROLLER) $(OBJ_FILES) -o main.elf
 
 main.hex: main.elf
-	avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature main.elf -O ihex main.hex
+	@echo "Generating Hex file......."
+	@avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature main.elf -O ihex main.hex
 
 clean:
-	rm -rf *.hex *.elf *.map *.o
+	@rm -rf *.hex *.elf *.map *.o
