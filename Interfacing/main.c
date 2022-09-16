@@ -13,7 +13,7 @@ int main(void)
 
         _delay_ms(1000);
 
-        mdio_getPinValue(PORTC, PIN2, LOW);
+        mdio_setPinValue(PORTC, PIN2, LOW);
 
         _delay_ms(1000);
     }
