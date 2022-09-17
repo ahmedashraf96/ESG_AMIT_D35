@@ -1,39 +1,31 @@
 /**
- * @file    MDIO_private.h
+ * @file    HPBUTT_cfg.h
  * @author  Ahmed Ashraf (ahmedashrafelnaqeeb@gmail.com)
- * @brief   This file contains private information related to DIO module
+ * @brief   This file contains configuration information related to Push button module
  * @version 1.0
- * @date    2022-09-10
+ * @date    2022-09-17
  * 
  * 
  */
 
 /*Header file guard*/
-#ifndef __MDIO_PRIVATE_H__
-#define __MDIO_PRIVATE_H__
+#ifndef __HPBUTT_CFG_H__
+#define __HPBUTT_CFG_H__
 
 /***************************************************************************************************/
-/*                                         DIO Registers                                           */
+/*                                       Configuration macros                                      */
 /***************************************************************************************************/
 
-/*PORTA registers*/
-#define MDIO_PORTA_ADDRESS                   ((volatile u8_t*)(0x3B))
-#define MDIO_DDRA_ADDRESS                    ((volatile u8_t*)(0x3A))
-#define MDIO_PINA_ADDRESS                    ((volatile u8_t*)(0x39))
+/*Push button 0 configurations*/
+#define PB0_PORT                      (PORTB)
+#define PB0_PIN                       (PIN0)
 
-/*PORTB registers*/
-#define MDIO_PORTB_ADDRESS                   ((volatile u8_t*)(0x38))
-#define MDIO_DDRB_ADDRESS                    ((volatile u8_t*)(0x37))
-#define MDIO_PINB_ADDRESS                    ((volatile u8_t*)(0x36))
+/*Push button 1 configurations*/
+#define PB1_PORT                      (PORTD)
+#define PB1_PIN                       (PIN6)
 
-/*PORTC registers*/
-#define MDIO_PORTC_ADDRESS                   ((volatile u8_t*)(0x35))
-#define MDIO_DDRC_ADDRESS                    ((volatile u8_t*)(0x34))
-#define MDIO_PINC_ADDRESS                    ((volatile u8_t*)(0x33))
+/*Push button 2 configurations*/
+#define PB2_PORT                      (PORTD)
+#define PB2_PIN                       (PIN2)
 
-/*PORTD registers*/
-#define MDIO_PORTD_ADDRESS                   ((volatile u8_t*)(0x32))
-#define MDIO_DDRD_ADDRESS                    ((volatile u8_t*)(0x31))
-#define MDIO_PIND_ADDRESS                    ((volatile u8_t*)(0x30))
-
-#endif /*__MDIO_PRIVATE_H__*/
+#endif /*__HPBUTT_CFG_H__*/
