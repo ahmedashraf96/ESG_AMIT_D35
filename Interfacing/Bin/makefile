@@ -9,18 +9,21 @@ INC_DIR := -I../LIB
 INC_DIR += -I../MCAL/MDIO
 INC_DIR += -I../HAL/HLED
 INC_DIR += -I../HAL/HPBUTT
+INC_DIR += -I../HAL/HSEV_SEG
 
 # C source files
 C_FILES := ../main.c
 C_FILES += ../MCAL/MDIO/MDIO_program.c
 C_FILES += ../HAL/HLED/HLED_program.c
 C_FILES += ../HAL/HPBUTT/HPBUTT_program.c
+C_FILES += ../HAL/HSEV_SEG/HSEV_SEG_program.c
 
 # Object files
 OBJ_FILES := main.o
 OBJ_FILES += MDIO_program.o
 OBJ_FILES += HLED_program.o
 OBJ_FILES += HPBUTT_program.o
+OBJ_FILES += HSEV_SEG_program.o
 
 # AVR Controller configuration
 CONTROLLER := atmega32

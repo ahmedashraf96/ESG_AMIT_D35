@@ -1,28 +1,20 @@
 #include "LSTD_TYPES.h"
 #include "LBIT_MATH.h"
-#include "HLED_interface.h"
-#include "HPBUTT_interface.h"
+#include "HSEV_SEG_interface.h"
 #include "util/delay.h"
 
 int main(void)
 {
-    u8_t pb_status;
-
-    hled_init(LED1);
-    hpbutt_init(PUSH_BUTTON_0);
+    hsev_seg_init(SEV_SEG_1);
+    hsev_seg_enable(SEV_SEG_1);
 
     while(1)
     {
-        hpbutt_getStatus(PUSH_BUTTON_0, &pb_status);
-
-        if(pb_status == PRESSED)
+        u8_t au8_looping;
+        for(au8_looping = NUMBER_0; au8_looping <= NUMBER_9; au8_looping++)
         {
-            _delay_ms(200);
-            hled_toggleLedValue(LED1);         
-        }
-        else
-        {
-            /*Do nothing*/
+            hsev_seg_displayNumber(au8_looping);
+            _delay_ms(1000);
         }
     }
 
