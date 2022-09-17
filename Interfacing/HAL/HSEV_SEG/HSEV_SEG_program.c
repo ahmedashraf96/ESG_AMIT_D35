@@ -33,6 +33,12 @@
 
 void hsev_seg_init(u8_t au8_sev_segNumber)
 {
+    /*Setting seven segment decoder pins as output*/
+    mdio_setPinStatus(SEV_SEG_DECODER_PORT, SEV_SEG_A_PIN, OUTPUT);
+    mdio_setPinStatus(SEV_SEG_DECODER_PORT, SEV_SEG_B_PIN, OUTPUT);
+    mdio_setPinStatus(SEV_SEG_DECODER_PORT, SEV_SEG_C_PIN, OUTPUT);
+    mdio_setPinStatus(SEV_SEG_DECODER_PORT, SEV_SEG_D_PIN, OUTPUT);
+
     /*Switching over seven segment modules*/
     switch(au8_sev_segNumber)
     {

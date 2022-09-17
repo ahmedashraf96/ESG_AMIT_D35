@@ -7,6 +7,7 @@ int main(void)
 {
     hsev_seg_init(SEV_SEG_1);
     hsev_seg_enable(SEV_SEG_1);
+    //hsev_seg_disable(SEV_SEG_2);
 
     while(1)
     {
