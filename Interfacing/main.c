@@ -7,11 +7,7 @@ int main(void)
 {
     hlcd_init();
 
-    hlcd_displayCharacter('A');
-    hlcd_displayCharacter('H');
-    hlcd_displayCharacter('M');
-    hlcd_displayCharacter('E');
-    hlcd_displayCharacter('D');
+    hlcd_displayString((u8_t*)"Ahmed");
 
     while(1)
     {

@@ -41,6 +41,9 @@
 #define INSTRUCTION_DELAY_MS   (1)
 #define CLEAR_DELAY_MS         (2)
 
+/*DDRAM Address control header*/
+#define SET_DDRAM_ADD_HEADER   (0x80)
+
 /***************************************************************************************************/
 /*                                       Functions' definitions                                    */
 /***************************************************************************************************/
@@ -193,6 +196,9 @@ void hlcd_displayString(u8_t* pu8_stringData)
 
 void hlcd_displayPoistion(u8_t au8_row, u8_t au8_col)
 {
+    /*Setting DDRAM address with specific row and column value*/
+    hlcd_sendCommand( (SET_DDRAM_ADD_HEADER | (au8_row | au8_col)) );
+
     /*Return from this function*/
     return;
 }
