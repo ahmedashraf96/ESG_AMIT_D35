@@ -194,7 +194,7 @@ void hlcd_displayString(u8_t* pu8_stringData)
     return;
 }
 
-void hlcd_displayPoistion(u8_t au8_row, u8_t au8_col)
+void hlcd_displayPosition(u8_t au8_row, u8_t au8_col)
 {
     /*Setting DDRAM address with specific row and column value*/
     hlcd_sendCommand( (SET_DDRAM_ADD_HEADER | (au8_row | au8_col)) );

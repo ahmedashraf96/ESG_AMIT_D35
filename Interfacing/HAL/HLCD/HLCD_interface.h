@@ -70,6 +70,6 @@ void hlcd_displayString(u8_t* pu8_stringData);
  * @param au8_row 
  * @param au8_col 
  */
-void hlcd_displayPoistion(u8_t au8_row, u8_t au8_col);
+void hlcd_displayPosition(u8_t au8_row, u8_t au8_col);
 
 #endif /*__HLCD_INTERFACE_H__*/
