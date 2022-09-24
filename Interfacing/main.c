@@ -1,20 +1,27 @@
 #include "LSTD_TYPES.h"
 #include "LBIT_MATH.h"
 #include "HLCD_interface.h"
+#include "HKPD_interface.h"
 #include "util/delay.h"
 
 int main(void)
 {
+    u8_t button;
     hlcd_init();
-
-    hlcd_displayPosition(LCD_ROW_1, LCD_COL_3);
-
-    _delay_ms(3000);
-
-    hlcd_displayString((u8_t*)"Ahmed");
+    hkpd_init();
 
     while(1)
     {
+        hkpd_getPressedButton(&button);
+
+        if(button != 0)
+        {
+            hlcd_displayCharacter(button);
+        }
+        else
+        {
+            /*Do nothing*/
+        }
     }
 
     return 0;

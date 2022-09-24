@@ -3,7 +3,7 @@ Archive member included to satisfy reference by file (symbol)
 d:/documents/embedded systems/tooling/toolchains/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_exit.o)
                               d:/documents/embedded systems/tooling/toolchains/avr/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5/crtatmega32.o (exit)
 d:/documents/embedded systems/tooling/toolchains/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_copy_data.o)
-                              main.o (__do_copy_data)
+                              MDIO_program.o (__do_copy_data)
 
 Memory Configuration
 
@@ -26,6 +26,7 @@ LOAD HLED_program.o
 LOAD HPBUTT_program.o
 LOAD HSEV_SEG_program.o
 LOAD HLCD_program.o
+LOAD HKPD_program.o
 START GROUP
 LOAD d:/documents/embedded systems/tooling/toolchains/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a
 LOAD d:/documents/embedded systems/tooling/toolchains/avr/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libm.a
@@ -131,7 +132,7 @@ END GROUP
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000      0x5a0
+.text           0x00000000      0x6a6
  *(.vectors)
  .vectors       0x00000000       0x54 d:/documents/embedded systems/tooling/toolchains/avr/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5/crtatmega32.o
                 0x00000000                __vector_default
@@ -233,43 +234,46 @@ END GROUP
                 0x00000550                hlcd_displayCharacter
                 0x00000554                hlcd_displayString
                 0x0000056c                hlcd_displayPosition
- .text          0x00000574        0x0 d:/documents/embedded systems/tooling/toolchains/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_exit.o)
- .text          0x00000574        0x0 d:/documents/embedded systems/tooling/toolchains/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_copy_data.o)
-                0x00000574                . = ALIGN (0x2)
+ .text          0x00000574      0x108 HKPD_program.o
+                0x00000574                hkpd_init
+                0x00000592                hkpd_getPressedButton
+ .text          0x0000067c        0x0 d:/documents/embedded systems/tooling/toolchains/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_exit.o)
+ .text          0x0000067c        0x0 d:/documents/embedded systems/tooling/toolchains/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_copy_data.o)
+                0x0000067c                . = ALIGN (0x2)
  *(.text.*)
- .text.startup  0x00000574       0x28 main.o
-                0x00000574                main
+ .text.startup  0x0000067c       0x26 main.o
+                0x0000067c                main
  .text.libgcc.mul
-                0x0000059c        0x0 d:/documents/embedded systems/tooling/toolchains/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_exit.o)
+                0x000006a2        0x0 d:/documents/embedded systems/tooling/toolchains/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_exit.o)
  .text.libgcc.div
-                0x0000059c        0x0 d:/documents/embedded systems/tooling/toolchains/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_exit.o)
- .text.libgcc   0x0000059c        0x0 d:/documents/embedded systems/tooling/toolchains/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_exit.o)
+                0x000006a2        0x0 d:/documents/embedded systems/tooling/toolchains/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_exit.o)
+ .text.libgcc   0x000006a2        0x0 d:/documents/embedded systems/tooling/toolchains/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_exit.o)
  .text.libgcc.prologue
-                0x0000059c        0x0 d:/documents/embedded systems/tooling/toolchains/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_exit.o)
+                0x000006a2        0x0 d:/documents/embedded systems/tooling/toolchains/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_exit.o)
  .text.libgcc.builtins
-                0x0000059c        0x0 d:/documents/embedded systems/tooling/toolchains/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_exit.o)
+                0x000006a2        0x0 d:/documents/embedded systems/tooling/toolchains/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_exit.o)
  .text.libgcc.fmul
-                0x0000059c        0x0 d:/documents/embedded systems/tooling/toolchains/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_exit.o)
+                0x000006a2        0x0 d:/documents/embedded systems/tooling/toolchains/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_exit.o)
  .text.libgcc.fixed
-                0x0000059c        0x0 d:/documents/embedded systems/tooling/toolchains/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_exit.o)
+                0x000006a2        0x0 d:/documents/embedded systems/tooling/toolchains/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_exit.o)
  .text.libgcc.mul
-                0x0000059c        0x0 d:/documents/embedded systems/tooling/toolchains/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_copy_data.o)
+                0x000006a2        0x0 d:/documents/embedded systems/tooling/toolchains/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_copy_data.o)
  .text.libgcc.div
-                0x0000059c        0x0 d:/documents/embedded systems/tooling/toolchains/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_copy_data.o)
- .text.libgcc   0x0000059c        0x0 d:/documents/embedded systems/tooling/toolchains/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_copy_data.o)
+                0x000006a2        0x0 d:/documents/embedded systems/tooling/toolchains/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_copy_data.o)
+ .text.libgcc   0x000006a2        0x0 d:/documents/embedded systems/tooling/toolchains/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_copy_data.o)
  .text.libgcc.prologue
-                0x0000059c        0x0 d:/documents/embedded systems/tooling/toolchains/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_copy_data.o)
+                0x000006a2        0x0 d:/documents/embedded systems/tooling/toolchains/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_copy_data.o)
  .text.libgcc.builtins
-                0x0000059c        0x0 d:/documents/embedded systems/tooling/toolchains/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_copy_data.o)
+                0x000006a2        0x0 d:/documents/embedded systems/tooling/toolchains/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_copy_data.o)
  .text.libgcc.fmul
-                0x0000059c        0x0 d:/documents/embedded systems/tooling/toolchains/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_copy_data.o)
+                0x000006a2        0x0 d:/documents/embedded systems/tooling/toolchains/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_copy_data.o)
  .text.libgcc.fixed
-                0x0000059c        0x0 d:/documents/embedded systems/tooling/toolchains/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_copy_data.o)
-                0x0000059c                . = ALIGN (0x2)
+                0x000006a2        0x0 d:/documents/embedded systems/tooling/toolchains/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_copy_data.o)
+                0x000006a2                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x0000059c        0x0 d:/documents/embedded systems/tooling/toolchains/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_exit.o)
-                0x0000059c                _exit
-                0x0000059c                exit
+ .fini9         0x000006a2        0x0 d:/documents/embedded systems/tooling/toolchains/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_exit.o)
+                0x000006a2                _exit
+                0x000006a2                exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -288,11 +292,11 @@ END GROUP
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x0000059c        0x4 d:/documents/embedded systems/tooling/toolchains/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_exit.o)
+ .fini0         0x000006a2        0x4 d:/documents/embedded systems/tooling/toolchains/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_exit.o)
  *(.fini0)
-                0x000005a0                _etext = .
+                0x000006a6                _etext = .
 
-.data           0x00800060       0x1e load address 0x000005a0
+.data           0x00800060       0x28 load address 0x000006a6
                 0x00800060                PROVIDE (__data_start, .)
  *(.data)
  .data          0x00800060        0x0 d:/documents/embedded systems/tooling/toolchains/avr/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5/crtatmega32.o
@@ -302,43 +306,44 @@ END GROUP
  .data          0x00800060        0x0 HPBUTT_program.o
  .data          0x00800060        0x0 HSEV_SEG_program.o
  .data          0x00800060        0x0 HLCD_program.o
+ .data          0x00800060        0x0 HKPD_program.o
  .data          0x00800060        0x0 d:/documents/embedded systems/tooling/toolchains/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_exit.o)
  .data          0x00800060        0x0 d:/documents/embedded systems/tooling/toolchains/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_copy_data.o)
  *(.data*)
  *(.gnu.linkonce.d*)
  *(.rodata)
  .rodata        0x00800060       0x18 MDIO_program.o
+ .rodata        0x00800078       0x10 HKPD_program.o
  *(.rodata*)
- .rodata.str1.1
-                0x00800078        0x6 main.o
  *(.gnu.linkonce.r*)
-                0x0080007e                . = ALIGN (0x2)
-                0x0080007e                _edata = .
-                0x0080007e                PROVIDE (__data_end, .)
+                0x00800088                . = ALIGN (0x2)
+                0x00800088                _edata = .
+                0x00800088                PROVIDE (__data_end, .)
 
-.bss            0x0080007e        0x0
+.bss            0x00800088        0x0
                 [!provide]                PROVIDE (__bss_start, .)
  *(.bss)
- .bss           0x0080007e        0x0 d:/documents/embedded systems/tooling/toolchains/avr/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5/crtatmega32.o
- .bss           0x0080007e        0x0 main.o
- .bss           0x0080007e        0x0 MDIO_program.o
- .bss           0x0080007e        0x0 HLED_program.o
- .bss           0x0080007e        0x0 HPBUTT_program.o
- .bss           0x0080007e        0x0 HSEV_SEG_program.o
- .bss           0x0080007e        0x0 HLCD_program.o
- .bss           0x0080007e        0x0 d:/documents/embedded systems/tooling/toolchains/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_exit.o)
- .bss           0x0080007e        0x0 d:/documents/embedded systems/tooling/toolchains/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_copy_data.o)
+ .bss           0x00800088        0x0 d:/documents/embedded systems/tooling/toolchains/avr/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5/crtatmega32.o
+ .bss           0x00800088        0x0 main.o
+ .bss           0x00800088        0x0 MDIO_program.o
+ .bss           0x00800088        0x0 HLED_program.o
+ .bss           0x00800088        0x0 HPBUTT_program.o
+ .bss           0x00800088        0x0 HSEV_SEG_program.o
+ .bss           0x00800088        0x0 HLCD_program.o
+ .bss           0x00800088        0x0 HKPD_program.o
+ .bss           0x00800088        0x0 d:/documents/embedded systems/tooling/toolchains/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_exit.o)
+ .bss           0x00800088        0x0 d:/documents/embedded systems/tooling/toolchains/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_copy_data.o)
  *(.bss*)
  *(COMMON)
                 [!provide]                PROVIDE (__bss_end, .)
-                0x000005a0                __data_load_start = LOADADDR (.data)
-                0x000005be                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x000006a6                __data_load_start = LOADADDR (.data)
+                0x000006ce                __data_load_end = (__data_load_start + SIZEOF (.data))
 
-.noinit         0x0080007e        0x0
+.noinit         0x00800088        0x0
                 [!provide]                PROVIDE (__noinit_start, .)
  *(.noinit*)
                 [!provide]                PROVIDE (__noinit_end, .)
-                0x0080007e                _end = .
+                0x00800088                _end = .
                 [!provide]                PROVIDE (__heap_start, .)
 
 .eeprom         0x00810000        0x0
@@ -387,6 +392,7 @@ END GROUP
  .comment       0x00000011       0x12 HPBUTT_program.o
  .comment       0x00000011       0x12 HSEV_SEG_program.o
  .comment       0x00000011       0x12 HLCD_program.o
+ .comment       0x00000011       0x12 HKPD_program.o
 
 .note.gnu.avr.deviceinfo
                 0x00000000       0x3c
