@@ -1,31 +1,25 @@
 #include "LSTD_TYPES.h"
 #include "LBIT_MATH.h"
-#include "HLCD_interface.h"
-#include "HKPD_interface.h"
-#include "avr/io.h"
-#include "util/delay.h"
+#include "avr/interrupt.h"
+#include "MDIO_interface.h"
+#include "MEXTI_interface.h"
+
+void func(void)
+{
+    mdio_togglePinValue(PORTC, PIN2);
+    return;
+}
 
 int main(void)
 {
-    u8_t button = 0;
-    hlcd_init();
-    hkpd_init();
+    mdio_setPinStatus(PORTC, PIN2, OUTPUT);
+    mdio_setPinStatus(PORTD, PIN2, INPUT_FLOAT);
 
-    while(1)
-    {
-        hkpd_getPressedButton(&button);
+    mexti_enableExternalInterrupt(INT0_REQ_NUM);
 
-        if(button != 0)
-        {
-            hlcd_displayCharacter(button);
-        }
-        else
-        {
-            /*Do nothing*/
-        }
-        
-        TCNT2 = button;
-    }
+    mexti_attachISR(INT0_REQ_NUM, RISING_EDGE_MODE, func);
 
+    while(1);
+    
     return 0;
 }
