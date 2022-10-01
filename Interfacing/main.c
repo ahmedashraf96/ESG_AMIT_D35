@@ -11,7 +11,7 @@ void func(void)
 }
 
 int main(void)
-{
+{    
     mdio_setPinStatus(PORTC, PIN2, OUTPUT);
     mdio_setPinStatus(PORTD, PIN2, INPUT_FLOAT);
 
@@ -19,7 +19,9 @@ int main(void)
 
     mexti_attachISR(INT0_REQ_NUM, RISING_EDGE_MODE, func);
 
-    while(1);
+    sei();
     
+    while(1);
+
     return 0;
 }
