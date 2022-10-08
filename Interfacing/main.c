@@ -1,27 +1,18 @@
 #include "LSTD_TYPES.h"
 #include "LBIT_MATH.h"
-#include "avr/io.h"
+#include "avr/interrupt.h"
+#include "MDIO_interface.h"
+#include "MTIMER_interface.h"
 
 int main(void)
 {
-    u16_t au16_value = 0;
-    SET_BIT(DDRC, 7);
-    TCCR0 = 0;
-    TCNT0 = 113;
-    TCCR0 |= 3;
+    mdio_setPinStatus(PORTC, PIN7, OUTPUT);
+    mtimer_init(TIMER_CHANNEL_0, TIMER_DELAY_MODE, TIMER_DELAY_PRESCALER);
 
     while(1)
     {
-        TOGGLE_BIT(PORTC, 7);
-
-        while(au16_value < 976)
-        {
-            while(!GET_BIT(TIFR, 0));
-            SET_BIT(TIFR, 0);
-            au16_value++;
-        }
-        au16_value = 0;
-        
+        mdio_togglePinValue(PORTC, PIN7);
+        mtimer_delayMs_synchronous(TIMER_CHANNEL_0, 1000);       
     }
 
     return 0;
