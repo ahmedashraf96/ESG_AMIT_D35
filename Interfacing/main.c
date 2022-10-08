@@ -1,27 +1,42 @@
 #include "LSTD_TYPES.h"
 #include "LBIT_MATH.h"
-#include "avr/interrupt.h"
 #include "MDIO_interface.h"
-#include "MEXTI_interface.h"
+#include "MADC_interface.h"
 
-void func(void)
-{
-    mdio_togglePinValue(PORTC, PIN2);
-    return;
-}
 
 int main(void)
-{    
-    mdio_setPinStatus(PORTC, PIN2, OUTPUT);
-    mdio_setPinStatus(PORTD, PIN2, INPUT_FLOAT);
+{
+    u16_t au16_value;
 
-    mexti_enableExternalInterrupt(INT0_REQ_NUM);
+    mdio_setPinStatus(PORTC, (PIN3 | PIN7), OUTPUT);
+    mdio_setPinStatus(PORTD, PIN3, OUTPUT);    
+    mdio_setPinStatus(PORTA, PIN1, INPUT_FLOAT);
 
-    mexti_attachISR(INT0_REQ_NUM, RISING_EDGE_MODE, func);
+    madc_init(AVCC_MODE, ADC_10_BITS, ADC_PRESCALER_16);
 
-    sei();
-    
-    while(1);
+    while(1)
+    {
+        madc_singleConversion(ADC_CHANNEL_1, &au16_value);
+
+        if(au16_value >= 0 && au16_value <= 250)
+        {
+            mdio_setPinValue(PORTC, PIN3, HIGH);
+            mdio_setPinValue(PORTC, PIN7, LOW);
+            mdio_setPinValue(PORTD, PIN3, LOW);
+        }
+        else if(au16_value > 250 && au16_value <= 700)
+        {
+            mdio_setPinValue(PORTC, PIN3, LOW);
+            mdio_setPinValue(PORTC, PIN7, HIGH);
+            mdio_setPinValue(PORTD, PIN3, LOW);
+        }
+        else
+        {
+            mdio_setPinValue(PORTC, PIN3, LOW);
+            mdio_setPinValue(PORTC, PIN7, LOW);
+            mdio_setPinValue(PORTD, PIN3, HIGH);            
+        }
+    }
 
     return 0;
 }
