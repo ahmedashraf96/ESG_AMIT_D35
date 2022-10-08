@@ -237,6 +237,9 @@ void mtimer_delayMs_asynchronous(u8_t au8_timerChannel, u32_t au32_delayTime_ms,
         /*In case of channel 0*/
         case TIMER_CHANNEL_0:
 
+            /*Setting the OCR0 value to make a compare match after 1ms*/
+            MTIMER_OCR0 = TIMER_1_MS_DELAY;
+
             /*Setting the timer0 operation parameters*/
             gu32_delayTimeMs_timer0 = au32_delayTime_ms;
             gfptr_timer0ISR = fptr_operationPointer;
@@ -297,9 +300,9 @@ void mtimer_delayMs_asynchronous(u8_t au8_timerChannel, u32_t au32_delayTime_ms,
 /*Timer0 ISR*/
 ISR(TIMER0_COMP_vect)
 {
-    /*Static local variable used to track the delay time*/
+    /*Static global variable used to track the delay time*/
     static u32_t au32_delayTemp = 0;
-    
+
     /*Increment the delay variable*/
     au32_delayTemp++;
 
@@ -335,6 +338,4 @@ ISR(TIMER0_COMP_vect)
     {
         /*Do nothing*/
     }
-
- 
 }
