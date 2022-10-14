@@ -23,7 +23,8 @@
 /*                                        Important macros                                         */
 /***************************************************************************************************/
 
-#define NULL         ((void*)0)
+#define NULL                     ((void*)0)
+#define TIMER_PH_CORRET_MODE     (0x60)
 
 /***************************************************************************************************/
 /*                                        Important variables                                      */
@@ -137,6 +138,28 @@ void mtimer_init(u8_t au8_timerChannel, u8_t au8_timerMode, u8_t au8_timerPresca
     {
         /*In case of channel 0*/
         case TIMER_CHANNEL_0:
+
+            /*Checking if the timer mode chosen is PWM mode or not*/
+            if(au8_timerMode == TIMER_PWM_MODE)
+            {
+                /*Checking if the chosen PWM mode is phase correct or fast PWM*/
+                if(au8_timerPrescaler > TIMER_PH_CORRECT_OFFSET)
+                {
+                    /*Setting phase correct mode*/
+                    au8_timerMode = TIMER_PH_CORRET_MODE;
+
+                    /*Setting the new timer prescaler*/
+                    au8_timerPrescaler -= TIMER_PH_CORRECT_OFFSET;
+                }
+                else
+                {
+                    /*Do nohing*/
+                }
+            }
+            else
+            {
+                /*Do nothing*/
+            }
 
             /*Setting the timer0 mode*/
             MTIMER_TCCR0 = au8_timerMode;
@@ -278,6 +301,129 @@ void mtimer_delayMs_asynchronous(u8_t au8_timerChannel, u32_t au32_delayTime_ms,
 
             /*Starting timer2 operations*/
             mtimer_start(TIMER_CHANNEL_2);
+
+            /*Breaking from this case*/
+            break;
+
+        /*In case of default*/
+        default:
+
+            /*Breaking from this case*/
+            break;
+    }
+
+    /*Return from this function*/
+    return;
+}
+
+void mtimer_runPWM_signal(u8_t au8_timerChannel, u8_t au8_dutyCycle)
+{
+    /*Switching over timer channels*/
+    switch(au8_timerChannel)
+    {
+        /*In case of channel 0*/
+        case TIMER_CHANNEL_0:
+
+            /*Setting the duty cycle*/
+            MTIMER_OCR0 = au8_dutyCycle;
+
+            /*Breaking from this case*/
+            break;
+
+        /*In case of channel 1*/
+        case TIMER_CHANNEL_1:
+
+            /*Breaking from this case*/
+            break;
+
+        /*In case of channel 2*/
+        case TIMER_CHANNEL_2:
+
+            /*Breaking from this case*/
+            break;
+
+        /*In case of default*/
+        default:
+
+            /*Breaking from this case*/
+            break;
+    }
+    
+    /*Return from this function*/
+    return;    
+}
+
+void mtimer_startPWM_signal(u8_t au8_timerChannel)
+{
+    /*Switching over timer channels*/
+    switch(au8_timerChannel)
+    {
+        /*In case of channel 0*/
+        case TIMER_CHANNEL_0:
+
+            /*Starting timer0 operations*/
+            mtimer_start(TIMER_CHANNEL_0);
+
+            /*Breaking from this case*/
+            break;
+
+        /*In case of channel 1*/
+        case TIMER_CHANNEL_1:
+
+            /*Starting timer1 operations*/
+            mtimer_start(TIMER_CHANNEL_1);
+
+            /*Breaking from this case*/
+            break;
+
+        /*In case of channel 2*/
+        case TIMER_CHANNEL_2:
+
+            /*Starting timer2 operations*/
+            mtimer_start(TIMER_CHANNEL_2);
+
+            /*Breaking from this case*/
+            break;
+
+        /*In case of default*/
+        default:
+
+            /*Breaking from this case*/
+            break;
+    }
+
+    /*Return from this function*/
+    return;
+}
+
+void mtimer_stopPWM_signal(u8_t au8_timerChannel)
+{
+    /*Switching over timer channels*/
+    switch(au8_timerChannel)
+    {
+        /*In case of channel 0*/
+        case TIMER_CHANNEL_0:
+
+            /*Stopping timer0 operations*/
+            mtimer_stop(TIMER_CHANNEL_0);
+
+            /*Breaking from this case*/
+            break;
+
+        /*In case of channel 1*/
+        case TIMER_CHANNEL_1:
+
+            /*Stopping timer1 operations*/
+            mtimer_stop(TIMER_CHANNEL_1);
+
+            /*Breaking from this case*/
+            break;
+
+        /*In case of channel 2*/
+        case TIMER_CHANNEL_2:
+
+            /*Stopping timer2 operations*/
+            mtimer_stop(TIMER_CHANNEL_2);
 
             /*Breaking from this case*/
             break;

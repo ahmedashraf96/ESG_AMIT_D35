@@ -1,23 +1,15 @@
 #include "LSTD_TYPES.h"
 #include "LBIT_MATH.h"
-#include "avr/interrupt.h"
 #include "MDIO_interface.h"
 #include "MTIMER_interface.h"
 
-void func(void)
-{
-    mdio_togglePinValue(PORTC, PIN7);
-}
-
 int main(void)
 {
-    mdio_setPinStatus(PORTC, PIN7, OUTPUT);
-    mtimer_init(TIMER_CHANNEL_0, TIMER_DELAY_MODE, TIMER_DELAY_PRESCALER);
+    mdio_setPinStatus(PORTB, PIN3, OUTPUT);
+    mtimer_init(TIMER_CHANNEL_0, TIMER_PWM_MODE, TIMER_FREQ_500_HZ);
 
-    sei();
-    
-    mtimer_delayMs_asynchronous(TIMER_CHANNEL_0, 2000, func, TIMER_PERIODIC_OPERATION);
-
+    mtimer_startPWM_signal(TIMER_CHANNEL_0);
+    mtimer_runPWM_signal(TIMER_CHANNEL_0, 50);
     while(1);
 
     return 0;
