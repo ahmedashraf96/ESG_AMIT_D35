@@ -16,7 +16,7 @@ int main(void)
     mtimer_init(TIMER_CHANNEL_1, TIMER_ICU_MODE, TIMER_ICU_PRESCALER);
 
     mtimer_startPWM_signal(TIMER_CHANNEL_0);
-    mtimer_runPWM_signal(TIMER_CHANNEL_0, 128);
+    mtimer_runPWM_signal(TIMER_CHANNEL_0, 230);
     
     while(1)
     {
