@@ -6,31 +6,12 @@
 
 int main(void)
 {
-    u16_t delay_var = 0;
-
     mdio_setPinStatus(PORTB, PIN3, OUTPUT);
-    mtimer_init(TIMER_CHANNEL_0, TIMER_PWM_MODE, TIMER_FREQ_1KHZ);
+    mtimer_init(TIMER_CHANNEL_0, TIMER_PWM_MODE, TIMER_FREQ_62_5_KHZ);
 
     mtimer_startPWM_signal(TIMER_CHANNEL_0);
-    while(1)
-    {
-        for(delay_var = 0; delay_var <= 255; delay_var++)
-        {
-            mtimer_runPWM_signal(TIMER_CHANNEL_0, delay_var);
-            _delay_ms(50);
-        }
-
-        _delay_ms(3000);
-
-        for(delay_var = 255; delay_var >= 0; delay_var--)
-        {
-            mtimer_runPWM_signal(TIMER_CHANNEL_0, delay_var);
-            _delay_ms(50);
-        }
-
-        _delay_ms(3000);
-    }
-
+    mtimer_runPWM_signal(TIMER_CHANNEL_0, 128);
+    while(1);
 
     return 0;
 }
