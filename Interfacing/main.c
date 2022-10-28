@@ -20,19 +20,12 @@ int main(void)
         if(au8_data == 'a')
         {
             mdio_setPinValue(PORTC, PIN2, HIGH);
-            muart_sendByte('\r');
-            muart_sendByte('\n');
-            muart_sendByte('O');
-            muart_sendByte('N');
+            muart_sendStream((u8_t*)"LED is ON\r\n", 11);
         }
         else if(au8_data == 'b')
         {
             mdio_setPinValue(PORTC, PIN2, LOW);
-            muart_sendByte('\r');
-            muart_sendByte('\n');
-            muart_sendByte('O');
-            muart_sendByte('F');
-            muart_sendByte('F');
+            muart_sendStream((u8_t*)"LED is OFF\r\n", 12);
         }
         else
         {
