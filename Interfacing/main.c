@@ -5,20 +5,19 @@
 
 int main(void)
 {
+    u8_t au8_data;
+
     mtwi_init();
-    mtwi_start(0x60, TWI_WRITE_OPERATION);
+    mtwi_start(0x60, TWI_READ_OPERATION);
 
-    mtwi_masterSend(0x50);
-    _delay_ms(1000);
-    mtwi_masterSend(0x60);
-    _delay_ms(1000);
-    mtwi_masterSend(0x70);
-    _delay_ms(1000);
-    mtwi_masterSend(0x80);
-    _delay_ms(1000);
-    mtwi_masterSend(0x90);
-    _delay_ms(1000);
-
+    mtwi_masterRecv_ACK(&au8_data);
+    _delay_ms(100);
+    mtwi_masterRecv_ACK(&au8_data);
+    _delay_ms(100);
+    mtwi_masterRecv_ACK(&au8_data);
+    _delay_ms(100);
+    mtwi_masterRecv_NACK(&au8_data);
+    _delay_ms(100);
     mtwi_stop();
 
     while(1)
