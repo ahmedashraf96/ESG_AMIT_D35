@@ -1,8 +1,8 @@
 #File name: makefile
 #Purpose:   Contains the compiler commands to have the final executable image (.hex)
 #Author:    Ahmed Ashraf
-#Date:      29-10-2022
-#Version:   v2.1
+#Date:      04-11-2022
+#Version:   v2.2
 
 # Include directories
 INC_DIR := -I../LIB
@@ -12,6 +12,7 @@ INC_DIR += -I../MCAL/MADC
 INC_DIR += -I../MCAL/MTIMER
 INC_DIR += -I../MCAL/MUART
 INC_DIR += -I../MCAL/MSPI
+INC_DIR += -I../MCAL/MTWI
 INC_DIR += -I../HAL/HLED
 INC_DIR += -I../HAL/HPBUTT
 INC_DIR += -I../HAL/HSEV_SEG
@@ -26,6 +27,7 @@ C_FILES += ../MCAL/MADC/MADC_program.c
 C_FILES += ../MCAL/MTIMER/MTIMER_program.c
 C_FILES += ../MCAL/MUART/MUART_program.c
 C_FILES += ../MCAL/MSPI/MSPI_program.c
+C_FILES += ../MCAL/MTWI/MTWI_program.c
 C_FILES += ../HAL/HLED/HLED_program.c
 C_FILES += ../HAL/HPBUTT/HPBUTT_program.c
 C_FILES += ../HAL/HSEV_SEG/HSEV_SEG_program.c
@@ -40,6 +42,7 @@ OBJ_FILES += MADC_program.o
 OBJ_FILES += MTIMER_program.o
 OBJ_FILES += MUART_program.o
 OBJ_FILES += MSPI_program.o
+OBJ_FILES += MTWI_program.o
 OBJ_FILES += HLED_program.o
 OBJ_FILES += HPBUTT_program.o
 OBJ_FILES += HSEV_SEG_program.o
