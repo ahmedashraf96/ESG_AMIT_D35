@@ -1,8 +1,8 @@
 #File name: makefile
 #Purpose:   Contains the compiler commands to have the final executable image (.hex)
 #Author:    Ahmed Ashraf
-#Date:      04-11-2022
-#Version:   v2.2
+#Date:      25-11-2022
+#Version:   v2.3
 
 # Include directories
 INC_DIR := -I../LIB
@@ -18,6 +18,7 @@ INC_DIR += -I../HAL/HPBUTT
 INC_DIR += -I../HAL/HSEV_SEG
 INC_DIR += -I../HAL/HLCD
 INC_DIR += -I../HAL/HKPD
+INC_DIR += -I../HAL/HEEP
 
 # C source files
 C_FILES := ../main.c
@@ -33,6 +34,7 @@ C_FILES += ../HAL/HPBUTT/HPBUTT_program.c
 C_FILES += ../HAL/HSEV_SEG/HSEV_SEG_program.c
 C_FILES += ../HAL/HLCD/HLCD_program.c
 C_FILES += ../HAL/HKPD/HKPD_program.c
+C_FILES += ../HAL/HEEP/HEEP_program.c
 
 # Object files
 OBJ_FILES := main.o
@@ -48,6 +50,7 @@ OBJ_FILES += HPBUTT_program.o
 OBJ_FILES += HSEV_SEG_program.o
 OBJ_FILES += HLCD_program.o
 OBJ_FILES += HKPD_program.o
+OBJ_FILES += HEEP_program.o
 
 # AVR Controller configuration
 CONTROLLER := atmega32
