@@ -98,9 +98,6 @@ void heeprom_writeDataStream(u8_t au8_eepromBlock, u8_t au8_eepromAddress, u8_t*
         /*Sending the data byte*/
         mtwi_masterSend(*pu8_data);
 
-        /*Waiting for 10ms*/
-        _delay_ms(10);
-
         /*Moving to the next data byte*/
         pu8_data++;
     }
@@ -172,7 +169,7 @@ void heeprom_readDataStream(u8_t au8_eepromBlock, u8_t au8_eepromAddress, u8_t* 
         mtwi_masterRecv_ACK(pu8_data);
 
         /*Waiting for 10ms*/
-        _delay_ms(10);
+        //_delay_ms(10);
 
         /*Go to the next byte address*/
         pu8_data++;

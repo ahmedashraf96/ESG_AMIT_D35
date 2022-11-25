@@ -5,19 +5,27 @@
 
 int main(void)
 {
-    u8_t arr[] = "Mohamed";
-    u8_t arr2[8];
+    u8_t arr[] = "Yamen";
+    u8_t arr2[6];
     u8_t var;
 
     heeprom_init();
 
     heeprom_writeByte(EEPROM_BLOCK_5, 10, 0x50);
 
-    heeprom_writeDataStream(EEPROM_BLOCK_2, 0, arr, 8);
+    _delay_ms(10);
+
+    heeprom_writeDataStream(EEPROM_BLOCK_3, 1, arr, 6);
+
+    _delay_ms(10);
 
     heeprom_readByte(EEPROM_BLOCK_5, 10, &var);
 
-    heeprom_readDataStream(EEPROM_BLOCK_2, 0, arr2, 8);
+    _delay_ms(10);
+
+    heeprom_readDataStream(EEPROM_BLOCK_3, 1, arr2, 6);
+
+    _delay_ms(10);
 
     while(1)
     {
