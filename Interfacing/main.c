@@ -1,31 +1,27 @@
 #include "LSTD_TYPES.h"
 #include "LBIT_MATH.h"
-#include "HEEP_interface.h"
-#include "util/delay.h"
+#include "HLED_interface.h"
+#include "STTS_interface.h"
+#include "avr/interrupt.h"
+
+void task1(void)
+{
+    hled_toggleLedValue(LED0);
+}
 
 int main(void)
 {
-    u8_t arr[] = "Yamen";
-    u8_t arr2[6];
-    u8_t var;
+    task_t task_led0 = {task1, 10};
 
-    heeprom_init();
+    hled_init(LED0);
 
-    heeprom_writeByte(EEPROM_BLOCK_5, 10, 0x50);
+    stts_init();
 
-    _delay_ms(10);
+    stts_addTask(task_led0);
 
-    heeprom_writeDataStream(EEPROM_BLOCK_3, 1, arr, 6);
+    sei();
 
-    _delay_ms(10);
-
-    heeprom_readByte(EEPROM_BLOCK_5, 10, &var);
-
-    _delay_ms(10);
-
-    heeprom_readDataStream(EEPROM_BLOCK_3, 1, arr2, 6);
-
-    _delay_ms(10);
+    stts_run(100);
 
     while(1)
     {
