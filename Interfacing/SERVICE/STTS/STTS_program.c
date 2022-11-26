@@ -104,19 +104,27 @@ static void stts_scheduler(void)
     /*Local variable used in looping operations*/
     u8_t au8_loopingVar = 0;
 
-    /*Looping over system tasks*/
-    for(au8_loopingVar = 0; au8_loopingVar < NUMBER_OF_TASKS; au8_loopingVar++)
+    /*Checking if the entered tasks number is correct*/
+    if(gu8_tasksCounter == NUMBER_OF_TASKS)
     {
-        /*Chehcking if the task periodicity happened or not*/
-        if((gu32_systemTicks % xTasks_arr[au8_loopingVar].task_periodicity) == TASK_TIME_ACHIEVED)
+        /*Looping over system tasks*/
+        for(au8_loopingVar = 0; au8_loopingVar < NUMBER_OF_TASKS; au8_loopingVar++)
         {
-            /*Executing task code*/
-           xTasks_arr[au8_loopingVar].fptr(); 
+            /*Chehcking if the task periodicity happened or not*/
+            if((gu32_systemTicks % xTasks_arr[au8_loopingVar].task_periodicity) == TASK_TIME_ACHIEVED)
+            {
+                /*Executing task code*/
+            xTasks_arr[au8_loopingVar].fptr(); 
+            }
+            else
+            {
+                /*Do nothing*/
+            }
         }
-        else
-        {
-            /*Do nothing*/
-        }
+    }
+    else
+    {
+        /*Do nothing*/
     }
 
     /*Rerturn from this function*/
