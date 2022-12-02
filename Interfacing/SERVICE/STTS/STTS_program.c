@@ -95,6 +95,8 @@ void stts_addTask(task_t xTask)
     return;
 }
 
+#if USING_ANOTHER_RTS == 0
+
 /**
  * @brief This function is used to schedule between the system tasks
  * 
@@ -144,3 +146,6 @@ void TIMER2_COMPA_ISR(void)
     /*Running the system scheduler*/
     stts_scheduler();
 }
+#else
+    /*Nothing*/
+#endif

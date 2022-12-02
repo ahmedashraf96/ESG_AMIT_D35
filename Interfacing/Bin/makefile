@@ -1,8 +1,8 @@
 #File name: makefile
 #Purpose:   Contains the compiler commands to have the final executable image (.hex)
 #Author:    Ahmed Ashraf
-#Date:      25-11-2022
-#Version:   v2.3
+#Date:      02-12-2022
+#Version:   v2.4
 
 # Include directories
 INC_DIR := -I../LIB
@@ -20,6 +20,8 @@ INC_DIR += -I../HAL/HLCD
 INC_DIR += -I../HAL/HKPD
 INC_DIR += -I../HAL/HEEP
 INC_DIR += -I../SERVICE/STTS
+INC_DIR += -I../SERVICE/FreeRTOS_Kernel/include
+INC_DIR += -I../SERVICE/FreeRTOS_Kernel/portable
 
 # C source files
 C_FILES := ../main.c
@@ -37,6 +39,15 @@ C_FILES += ../HAL/HLCD/HLCD_program.c
 C_FILES += ../HAL/HKPD/HKPD_program.c
 C_FILES += ../HAL/HEEP/HEEP_program.c
 C_FILES += ../SERVICE/STTS/STTS_program.c
+C_FILES += ../SERVICE/FreeRTOS_Kernel/croutine.c
+C_FILES += ../SERVICE/FreeRTOS_Kernel/event_groups.c
+C_FILES += ../SERVICE/FreeRTOS_Kernel/heap_1.c
+C_FILES += ../SERVICE/FreeRTOS_Kernel/list.c
+C_FILES += ../SERVICE/FreeRTOS_Kernel/queue.c
+C_FILES += ../SERVICE/FreeRTOS_Kernel/stream_buffer.c
+C_FILES += ../SERVICE/FreeRTOS_Kernel/tasks.c
+C_FILES += ../SERVICE/FreeRTOS_Kernel/timers.c
+C_FILES += ../SERVICE/FreeRTOS_Kernel/portable/port.c
 
 # Object files
 OBJ_FILES := main.o
@@ -54,6 +65,15 @@ OBJ_FILES += HLCD_program.o
 OBJ_FILES += HKPD_program.o
 OBJ_FILES += HEEP_program.o
 OBJ_FILES += STTS_program.o
+OBJ_FILES += croutine.o
+OBJ_FILES += event_groups.o
+OBJ_FILES += heap_1.o
+OBJ_FILES += list.o
+OBJ_FILES += queue.o
+OBJ_FILES += stream_buffer.o
+OBJ_FILES += tasks.o
+OBJ_FILES += timers.o
+OBJ_FILES += port.o
 
 # AVR Controller configuration
 CONTROLLER := atmega32

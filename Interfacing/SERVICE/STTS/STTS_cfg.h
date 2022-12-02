@@ -22,4 +22,7 @@
 /*Timer prescaler configuration*/
 #define TIMER_PRESCALER    (3)
 
+/*Using another RTS*/
+#define USING_ANOTHER_RTS  (1)
+
 #endif /*__STTS_CFG_H__*/

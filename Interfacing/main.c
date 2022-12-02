@@ -1,47 +1,68 @@
 #include "LSTD_TYPES.h"
 #include "LBIT_MATH.h"
 #include "HLED_interface.h"
-#include "STTS_interface.h"
-#include "avr/interrupt.h"
+#include "FreeRTOS.h"
+#include "task.h"
 
-void task1(void)
+void taskInit(void* pvParameters)
 {
-    hled_toggleLedValue(LED0);
+    while(1)
+    {
+        hled_init(LED0);
+        hled_init(LED1);
+        hled_init(LED2);
+
+        vTaskDelete(NULL);
+    }
+
+    return;
 }
 
-void task2(void)
+void task1(void* pvParameters)
 {
-    hled_toggleLedValue(LED1);
+    while(1)
+    {
+        hled_toggleLedValue(LED0);
+        vTaskDelay((const TickType_t)1000);
+    }
+
+    return;
 }
 
-void task3(void)
+void task2(void* pvParameters)
 {
-    hled_toggleLedValue(LED2);
+    while(1)
+    {
+        hled_toggleLedValue(LED1);
+        vTaskDelay((const TickType_t)500);
+    }
+
+    return;
+}
+
+void task3(void* pvParameters)
+{
+    while(1)
+    {
+        hled_toggleLedValue(LED2);
+        vTaskDelay((const TickType_t)250);
+    }
+
+    return;
 }
 
 int main(void)
 {
-    task_t task_led0 = {task1, 20};
-    task_t task_led1 = {task2, 10};
-    task_t task_led2 = {task3, 5};
+    xTaskCreate(taskInit, "Init", configMINIMAL_STACK_SIZE, NULL, 4, NULL);
+    xTaskCreate(task1, "task1", configMINIMAL_STACK_SIZE, NULL, 3, NULL);
+    xTaskCreate(task2, "task2", configMINIMAL_STACK_SIZE, NULL, 2, NULL);
+    xTaskCreate(task3, "task3", configMINIMAL_STACK_SIZE, NULL, 1, NULL);
 
-    hled_init(LED0);
-    hled_init(LED1);
-    hled_init(LED2);
-
-    stts_init();
-
-    stts_addTask(task_led0);
-    stts_addTask(task_led1);
-    stts_addTask(task_led2);
-
-    sei();
-
-    stts_run(50);
+    vTaskStartScheduler();
 
     while(1)
     {
-        /*Idle*/
+        /*Report system failure*/
     }
 
     return 0;
