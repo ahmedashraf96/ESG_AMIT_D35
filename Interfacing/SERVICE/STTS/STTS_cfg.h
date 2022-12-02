@@ -17,7 +17,7 @@
 /***************************************************************************************************/
 
 /*Number of tasks configuration*/
-#define NUMBER_OF_TASKS    (1)
+#define NUMBER_OF_TASKS    (3)
 
 /*Timer prescaler configuration*/
 #define TIMER_PRESCALER    (3)
