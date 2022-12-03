@@ -1,16 +1,21 @@
 #include "LSTD_TYPES.h"
 #include "LBIT_MATH.h"
 #include "HLED_interface.h"
+#include "HPBUTT_interface.h"
 #include "FreeRTOS.h"
 #include "task.h"
+#include "semphr.h"
+
+SemaphoreHandle_t xSemaphore;
 
 void taskInit(void* pvParameters)
 {
     while(1)
     {
+        xSemaphore = xSemaphoreCreateBinary();
+
         hled_init(LED0);
-        hled_init(LED1);
-        hled_init(LED2);
+        hpbutt_init(PUSH_BUTTON_0);
 
         vTaskDelete(NULL);
     }
@@ -18,45 +23,54 @@ void taskInit(void* pvParameters)
     return;
 }
 
-void task1(void* pvParameters)
+void pbTask(void* pvParameters)
 {
+    u8_t pbStatus;
+
     while(1)
     {
-        hled_toggleLedValue(LED0);
-        vTaskDelay((const TickType_t)1000);
+        hpbutt_getStatus(PUSH_BUTTON_0, &pbStatus);
+        
+        if(pbStatus == PRESSED)
+        {
+            xSemaphoreGive(xSemaphore);
+        }
+        else
+        {
+            /*Do nothing*/
+        }
+
+        vTaskDelay((TickType_t) 100);
     }
 
     return;
 }
 
-void task2(void* pvParameters)
+void ledTask(void* pvParameters)
 {
     while(1)
     {
-        hled_toggleLedValue(LED1);
-        vTaskDelay((const TickType_t)500);
+        if(xSemaphoreTake(xSemaphore, (TickType_t)10) == pdTRUE)
+        {
+            hled_toggleLedValue(LED0);
+        }
+        else
+        {
+            /*Do nothing*/
+        }
+
+        vTaskDelay((TickType_t) 100);
     }
 
     return;
 }
 
-void task3(void* pvParameters)
-{
-    while(1)
-    {
-        hled_toggleLedValue(LED2);
-        vTaskDelay((const TickType_t)250);
-    }
-
-    return;
-}
 
 int main(void)
 {
-    xTaskCreate(taskInit, "Init", configMINIMAL_STACK_SIZE, NULL, 4, NULL);
-    xTaskCreate(task1, "task1", configMINIMAL_STACK_SIZE, NULL, 3, NULL);
-    xTaskCreate(task2, "task2", configMINIMAL_STACK_SIZE, NULL, 2, NULL);
-    xTaskCreate(task3, "task3", configMINIMAL_STACK_SIZE, NULL, 1, NULL);
+    xTaskCreate(taskInit, "Init", configMINIMAL_STACK_SIZE, NULL, 3, NULL);
+    xTaskCreate(pbTask, "PB", configMINIMAL_STACK_SIZE, NULL, 2, NULL);
+    xTaskCreate(ledTask, "LED", configMINIMAL_STACK_SIZE, NULL, 1, NULL);
 
     vTaskStartScheduler();
 
