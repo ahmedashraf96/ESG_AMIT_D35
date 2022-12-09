@@ -86,7 +86,7 @@ void ledTask(void* pvParameters)
     while(1)
     {
         // Task will be blocked until one of the pb is pressed
-        xEventGroupWaitBits(xEventGroup_handler, (LED0_EVENT | LED1_EVENT | LED2_EVENT), pdTRUE, pdFALSE, portMAX_DELAY);
+        xEventGroupWaitBits(xEventGroup_handler, (LED0_EVENT | LED1_EVENT | LED2_EVENT), pdFALSE, pdFALSE, portMAX_DELAY);
         xEventGroupBits = xEventGroupGetBits(xEventGroup_handler);
 
         if(GET_BIT(xEventGroupBits, 0) == pdTRUE)
@@ -116,6 +116,8 @@ void ledTask(void* pvParameters)
             /*Do nothing*/
         }
 
+        xEventGroupClearBits(xEventGroup_handler, (LED0_EVENT | LED1_EVENT | LED2_EVENT));
+        
         vTaskDelay(100);
     }
 
