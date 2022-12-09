@@ -115,6 +115,8 @@ void ledTask(void* pvParameters)
         {
             /*Do nothing*/
         }
+
+        vTaskDelay(100);
     }
 
     return;
