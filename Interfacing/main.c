@@ -73,7 +73,14 @@ void pbTask(void* pvParameters)
             /*Do nothing*/
         }
 
-        xEventGroupSetBits(xEventGroup_handler, eventsToSet);
+        if(eventsToSet != 0)
+        {
+            xEventGroupSetBits(xEventGroup_handler, eventsToSet);
+        }
+        else
+        {
+            /*Do nothing*/
+        }
 
         vTaskDelay(100);
     }
