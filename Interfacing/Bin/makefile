@@ -83,6 +83,12 @@ CONTROLLER_CLK := 16000000
 CC := avr-gcc
 COMPILER_OPTIONS := -mmcu=$(CONTROLLER) -DF_CPU=$(CONTROLLER_CLK) -Wall -Os $(INC_DIR)
 
+# Elf and Hex files
+ELF_FILE := main.elf
+HEX_FILE := main.hex
+
+############################################ Rules ############################################
+
 all: $(C_FILES) clean main.hex
 
 main.elf:
@@ -94,6 +100,10 @@ main.elf:
 main.hex: main.elf
 	@echo "Generating Hex file......."
 	@avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature main.elf -O ihex main.hex
+
+flash: $(HEX_FILE)
+	@echo "Flashing software......."
+	@avrdude -c usbasp -p atmega32 -U flash:w:$(HEX_FILE)
 
 clean:
 	@rm -rf *.hex *.elf *.map *.o

@@ -1,16 +1,16 @@
 Archive member included to satisfy reference by file (symbol)
 
-c:/users/aelnaqee/documents/projects/toolchains/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_udivmodsi4.o)
+/usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_udivmodsi4.o)
                               MTIMER_program.o (__udivmodsi4)
-c:/users/aelnaqee/documents/projects/toolchains/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_exit.o)
-                              c:/users/aelnaqee/documents/projects/toolchains/avr/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5/crtatmega32.o (exit)
-c:/users/aelnaqee/documents/projects/toolchains/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_copy_data.o)
+/usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_exit.o)
+                              /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/crtatmega32.o (exit)
+/usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_copy_data.o)
                               main.o (__do_copy_data)
-c:/users/aelnaqee/documents/projects/toolchains/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_clear_bss.o)
+/usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_clear_bss.o)
                               main.o (__do_clear_bss)
-c:/users/aelnaqee/documents/projects/toolchains/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_umulhisi3.o)
+/usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_umulhisi3.o)
                               MTIMER_program.o (__umulhisi3)
-c:/users/aelnaqee/documents/projects/toolchains/avr/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libc.a(memcpy.o)
+/usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(memcpy.o)
                               queue.o (memcpy)
 
 Allocating common symbols
@@ -23,18 +23,18 @@ xEventGroup_handler
 Memory Configuration
 
 Name             Origin             Length             Attributes
-text             0x00000000         0x00020000         xr
-data             0x00800060         0x0000ffa0         rw !x
-eeprom           0x00810000         0x00010000         rw !x
-fuse             0x00820000         0x00000002         rw !x
-lock             0x00830000         0x00000400         rw !x
-signature        0x00840000         0x00000400         rw !x
-user_signatures  0x00850000         0x00000400         rw !x
-*default*        0x00000000         0xffffffff
+text             0x0000000000000000 0x0000000000008000 xr
+data             0x0000000000800060 0x0000000000000800 rw !x
+eeprom           0x0000000000810000 0x0000000000000400 rw !x
+fuse             0x0000000000820000 0x0000000000000002 rw !x
+lock             0x0000000000830000 0x0000000000000400 rw !x
+signature        0x0000000000840000 0x0000000000000400 rw !x
+user_signatures  0x0000000000850000 0x0000000000000400 rw !x
+*default*        0x0000000000000000 0xffffffffffffffff
 
 Linker script and memory map
 
-LOAD c:/users/aelnaqee/documents/projects/toolchains/avr/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5/crtatmega32.o
+LOAD /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/crtatmega32.o
 LOAD main.o
 LOAD MDIO_program.o
 LOAD MEXTI_program.o
@@ -60,19 +60,20 @@ LOAD tasks.o
 LOAD timers.o
 LOAD port.o
 START GROUP
-LOAD c:/users/aelnaqee/documents/projects/toolchains/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a
-LOAD c:/users/aelnaqee/documents/projects/toolchains/avr/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libm.a
-LOAD c:/users/aelnaqee/documents/projects/toolchains/avr/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libc.a
-LOAD c:/users/aelnaqee/documents/projects/toolchains/avr/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libatmega32.a
+LOAD /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a
+LOAD /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libm.a
+LOAD /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a
+LOAD /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libatmega32.a
 END GROUP
-                0x00020000                __TEXT_REGION_LENGTH__ = DEFINED (__TEXT_REGION_LENGTH__)?__TEXT_REGION_LENGTH__:0x20000
-                0x0000ffa0                __DATA_REGION_LENGTH__ = DEFINED (__DATA_REGION_LENGTH__)?__DATA_REGION_LENGTH__:0xffa0
-                0x00010000                __EEPROM_REGION_LENGTH__ = DEFINED (__EEPROM_REGION_LENGTH__)?__EEPROM_REGION_LENGTH__:0x10000
-                [0x00000002]                __FUSE_REGION_LENGTH__ = DEFINED (__FUSE_REGION_LENGTH__)?__FUSE_REGION_LENGTH__:0x400
-                0x00000400                __LOCK_REGION_LENGTH__ = DEFINED (__LOCK_REGION_LENGTH__)?__LOCK_REGION_LENGTH__:0x400
-                0x00000400                __SIGNATURE_REGION_LENGTH__ = DEFINED (__SIGNATURE_REGION_LENGTH__)?__SIGNATURE_REGION_LENGTH__:0x400
-                0x00000400                __USER_SIGNATURE_REGION_LENGTH__ = DEFINED (__USER_SIGNATURE_REGION_LENGTH__)?__USER_SIGNATURE_REGION_LENGTH__:0x400
-                0x00800060                __DATA_REGION_ORIGIN__ = DEFINED (__DATA_REGION_ORIGIN__)?__DATA_REGION_ORIGIN__:0x800060
+                0x0000000000000000                __TEXT_REGION_ORIGIN__ = DEFINED (__TEXT_REGION_ORIGIN__)?__TEXT_REGION_ORIGIN__:0x0
+                [0x0000000000800060]                __DATA_REGION_ORIGIN__ = DEFINED (__DATA_REGION_ORIGIN__)?__DATA_REGION_ORIGIN__:0x800060
+                [0x0000000000008000]                __TEXT_REGION_LENGTH__ = DEFINED (__TEXT_REGION_LENGTH__)?__TEXT_REGION_LENGTH__:0x20000
+                [0x0000000000000800]                __DATA_REGION_LENGTH__ = DEFINED (__DATA_REGION_LENGTH__)?__DATA_REGION_LENGTH__:0xffa0
+                [0x0000000000000400]                __EEPROM_REGION_LENGTH__ = DEFINED (__EEPROM_REGION_LENGTH__)?__EEPROM_REGION_LENGTH__:0x10000
+                [0x0000000000000002]                __FUSE_REGION_LENGTH__ = DEFINED (__FUSE_REGION_LENGTH__)?__FUSE_REGION_LENGTH__:0x400
+                0x0000000000000400                __LOCK_REGION_LENGTH__ = DEFINED (__LOCK_REGION_LENGTH__)?__LOCK_REGION_LENGTH__:0x400
+                0x0000000000000400                __SIGNATURE_REGION_LENGTH__ = DEFINED (__SIGNATURE_REGION_LENGTH__)?__SIGNATURE_REGION_LENGTH__:0x400
+                0x0000000000000400                __USER_SIGNATURE_REGION_LENGTH__ = DEFINED (__USER_SIGNATURE_REGION_LENGTH__)?__USER_SIGNATURE_REGION_LENGTH__:0x400
 
 .hash
  *(.hash)
@@ -164,51 +165,51 @@ END GROUP
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000     0x43b4
+.text           0x0000000000000000     0x43f6
  *(.vectors)
- .vectors       0x00000000       0x54 c:/users/aelnaqee/documents/projects/toolchains/avr/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5/crtatmega32.o
-                0x00000000                __vector_default
-                0x00000000                __vectors
+ .vectors       0x0000000000000000       0x54 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/crtatmega32.o
+                0x0000000000000000                __vectors
+                0x0000000000000000                __vector_default
  *(.vectors)
  *(.progmem.gcc*)
-                0x00000054                . = ALIGN (0x2)
-                0x00000054                __trampolines_start = .
+                0x0000000000000054                . = ALIGN (0x2)
+                0x0000000000000054                __trampolines_start = .
  *(.trampolines)
- .trampolines   0x00000054        0x0 linker stubs
+ .trampolines   0x0000000000000054        0x0 linker stubs
  *(.trampolines*)
-                0x00000054                __trampolines_end = .
+                0x0000000000000054                __trampolines_end = .
  *libprintf_flt.a:*(.progmem.data)
  *libc.a:*(.progmem.data)
  *(.progmem*)
-                0x00000054                . = ALIGN (0x2)
+                0x0000000000000054                . = ALIGN (0x2)
  *(.jumptables)
  *(.jumptables*)
  *(.lowtext)
  *(.lowtext*)
-                0x00000054                __ctors_start = .
+                0x0000000000000054                __ctors_start = .
  *(.ctors)
-                0x00000054                __ctors_end = .
-                0x00000054                __dtors_start = .
+                0x0000000000000054                __ctors_end = .
+                0x0000000000000054                __dtors_start = .
  *(.dtors)
-                0x00000054                __dtors_end = .
+                0x0000000000000054                __dtors_end = .
  SORT(*)(.ctors)
  SORT(*)(.dtors)
  *(.init0)
- .init0         0x00000054        0x0 c:/users/aelnaqee/documents/projects/toolchains/avr/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5/crtatmega32.o
-                0x00000054                __init
+ .init0         0x0000000000000054        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/crtatmega32.o
+                0x0000000000000054                __init
  *(.init0)
  *(.init1)
  *(.init1)
  *(.init2)
- .init2         0x00000054        0xc c:/users/aelnaqee/documents/projects/toolchains/avr/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5/crtatmega32.o
+ .init2         0x0000000000000054        0xc /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/crtatmega32.o
  *(.init2)
  *(.init3)
  *(.init3)
  *(.init4)
- .init4         0x00000060       0x16 c:/users/aelnaqee/documents/projects/toolchains/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_copy_data.o)
-                0x00000060                __do_copy_data
- .init4         0x00000076       0x10 c:/users/aelnaqee/documents/projects/toolchains/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_clear_bss.o)
-                0x00000076                __do_clear_bss
+ .init4         0x0000000000000060       0x16 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_copy_data.o)
+                0x0000000000000060                __do_copy_data
+ .init4         0x0000000000000076       0x10 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_clear_bss.o)
+                0x0000000000000076                __do_clear_bss
  *(.init4)
  *(.init5)
  *(.init5)
@@ -219,285 +220,285 @@ END GROUP
  *(.init8)
  *(.init8)
  *(.init9)
- .init9         0x00000086        0x8 c:/users/aelnaqee/documents/projects/toolchains/avr/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5/crtatmega32.o
+ .init9         0x0000000000000086        0x8 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/crtatmega32.o
  *(.init9)
  *(.text)
- .text          0x0000008e        0x4 c:/users/aelnaqee/documents/projects/toolchains/avr/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5/crtatmega32.o
-                0x0000008e                __vector_12
-                0x0000008e                __bad_interrupt
-                0x0000008e                __vector_6
-                0x0000008e                __vector_11
-                0x0000008e                __vector_13
-                0x0000008e                __vector_17
-                0x0000008e                __vector_19
-                0x0000008e                __vector_5
-                0x0000008e                __vector_4
-                0x0000008e                __vector_9
-                0x0000008e                __vector_15
-                0x0000008e                __vector_8
-                0x0000008e                __vector_14
-                0x0000008e                __vector_16
-                0x0000008e                __vector_18
-                0x0000008e                __vector_20
- .text          0x00000092      0x13c main.o
-                0x00000092                taskInit
-                0x000000cc                pbTask
-                0x00000158                ledTask
- .text          0x000001ce       0xe6 MDIO_program.o
-                0x000001ce                mdio_setPinStatus
-                0x00000236                mdio_setPinValue
-                0x00000274                mdio_togglePinValue
-                0x0000028e                mdio_getPinValue
- .text          0x000002b4      0x194 MEXTI_program.o
-                0x000002b4                mexti_enableExternalInterrupt
-                0x000002d4                mexti_disableExternalInterrupt
-                0x000002f4                mexti_attachISR
-                0x00000352                __vector_1
-                0x000003a4                __vector_2
-                0x000003f6                __vector_3
- .text          0x00000448       0x44 MADC_program.o
-                0x00000448                madc_init
-                0x00000462                madc_singleConversion
- .text          0x0000048c      0x2a0 MTIMER_program.o
-                0x000004ae                mtimer_init
-                0x000004d8                mtimer_delayMs_synchronous
-                0x00000524                mtimer_delayMs_asynchronous
-                0x00000564                mtimer_runPWM_signal
-                0x0000056c                mtimer_startPWM_signal
-                0x0000057e                mtimer_stopPWM_signal
-                0x0000059c                mtimer_getSignal_duty_and_freq
-                0x0000067c                __vector_10
- .text          0x0000072c       0x44 MUART_program.o
-                0x0000072c                muart_init
-                0x0000073c                muart_sendByte
-                0x0000074a                muart_recvByte
-                0x00000756                muart_sendStream
- .text          0x00000770       0x56 MSPI_program.o
-                0x00000770                mspi_init
-                0x0000079a                mspi_masterSendRecv_byte
-                0x000007a8                mspi_slaveSendRecv_byte
- .text          0x000007c6       0x6c MTWI_program.o
-                0x000007c6                mtwi_init
-                0x000007ce                mtwi_start
-                0x000007f4                mtwi_stop
-                0x00000800                mtwi_masterSend
-                0x0000080e                mtwi_masterRecv_ACK
-                0x00000820                mtwi_masterRecv_NACK
- .text          0x00000832       0x8a HLED_program.o
-                0x00000832                hled_init
-                0x00000856                hled_ledValueON
-                0x0000087a                hled_ledValueOFF
-                0x0000089e                hled_toggleLedValue
- .text          0x000008bc       0x44 HPBUTT_program.o
-                0x000008bc                hpbutt_init
-                0x000008e0                hpbutt_getStatus
- .text          0x00000900       0xc4 HSEV_SEG_program.o
-                0x00000900                hsev_seg_init
-                0x0000094a                hsev_seg_enable
-                0x00000964                hsev_seg_disable
-                0x0000097e                hsev_seg_displayNumber
- .text          0x000009c4      0x27a HLCD_program.o
-                0x00000b58                hlcd_init
-                0x00000c1a                hlcd_displayCharacter
-                0x00000c1e                hlcd_displayString
-                0x00000c36                hlcd_displayPosition
- .text          0x00000c3e      0x108 HKPD_program.o
-                0x00000c3e                hkpd_init
-                0x00000c5c                hkpd_getPressedButton
- .text          0x00000d46      0x15a HEEP_program.o
-                0x00000d46                heeprom_init
-                0x00000d4a                heeprom_writeByte
-                0x00000d86                heeprom_writeDataStream
-                0x00000ddc                heeprom_readByte
-                0x00000e2c                heeprom_readDataStream
- .text          0x00000ea0       0x44 STTS_program.o
-                0x00000ea0                stts_init
-                0x00000eb2                stts_run
-                0x00000ed4                stts_addTask
- .text          0x00000ee4        0x0 croutine.o
- .text          0x00000ee4      0x484 event_groups.o
-                0x00000ee4                xEventGroupCreate
-                0x00000f0e                xEventGroupWaitBits
-                0x0000106e                xEventGroupClearBits
-                0x000010a8                xEventGroupGetBitsFromISR
-                0x000010b4                xEventGroupSetBits
-                0x000011b2                xEventGroupSync
-                0x00001330                vEventGroupDelete
-                0x00001360                vEventGroupSetBitsCallback
-                0x00001364                vEventGroupClearBitsCallback
- .text          0x00001368       0x8e heap_1.o
-                0x00001368                pvPortMalloc
-                0x000013d8                vPortFree
-                0x000013da                vPortInitialiseBlocks
-                0x000013e4                xPortGetFreeHeapSize
- .text          0x000013f6      0x138 list.o
-                0x000013f6                vListInitialise
-                0x00001418                vListInitialiseItem
-                0x00001420                vListInsertEnd
-                0x00001460                vListInsert
-                0x000014e6                uxListRemove
- .text          0x0000152e      0x888 queue.o
-                0x00001688                xQueueGenericReset
-                0x00001714                xQueueGenericCreate
-                0x00001764                xQueueGenericSend
-                0x000018a2                xQueueGenericSendFromISR
-                0x00001902                xQueueGiveFromISR
-                0x0000194a                xQueueReceive
-                0x00001a84                xQueueSemaphoreTake
-                0x00001ba6                xQueuePeek
-                0x00001ce0                xQueueReceiveFromISR
-                0x00001d40                xQueuePeekFromISR
-                0x00001d6e                uxQueueMessagesWaiting
-                0x00001d7e                uxQueueSpacesAvailable
-                0x00001d92                uxQueueMessagesWaitingFromISR
-                0x00001d98                vQueueDelete
-                0x00001d9c                xQueueIsQueueEmptyFromISR
-                0x00001da8                xQueueIsQueueFullFromISR
- .text          0x00001db6      0x84c stream_buffer.o
-                0x0000200a                xStreamBufferGenericCreate
-                0x0000206e                vStreamBufferDelete
-                0x00002082                xStreamBufferReset
-                0x000020c8                xStreamBufferSetTriggerLevel
-                0x000020ea                xStreamBufferSpacesAvailable
-                0x0000211e                xStreamBufferBytesAvailable
-                0x00002122                xStreamBufferSend
-                0x000022b6                xStreamBufferSendFromISR
-                0x00002342                xStreamBufferReceive
-                0x00002446                xStreamBufferNextMessageLengthBytes
-                0x00002494                xStreamBufferReceiveFromISR
-                0x0000251e                xStreamBufferIsEmpty
-                0x00002534                xStreamBufferIsFull
-                0x0000255e                xStreamBufferSendCompletedFromISR
-                0x000025b0                xStreamBufferReceiveCompletedFromISR
- .text          0x00002602     0x1a3a tasks.o
-                0x000027ea                xTaskCreate
-                0x00002a40                vTaskDelete
-                0x00002af8                vTaskResume
-                0x00002bc6                xTaskResumeFromISR
-                0x00002c9e                vTaskStartScheduler
-                0x00002d02                vTaskEndScheduler
-                0x00002d0c                vTaskSuspendAll
-                0x00002d18                xTaskGetTickCount
-                0x00002d34                xTaskGetTickCountFromISR
-                0x00002d46                uxTaskGetNumberOfTasks
-                0x00002d4c                pcTaskGetName
-                0x00002d5c                xTaskIncrementTick
-                0x00002fa8                xTaskResumeAll
-                0x0000315a                xTaskDelayUntil
-                0x00003212                vTaskDelay
-                0x0000324e                xTaskCatchUpTicks
-                0x00003292                vTaskSwitchContext
-                0x0000331a                vTaskSuspend
-                0x000033c4                vTaskPlaceOnEventList
-                0x000033f2                vTaskPlaceOnUnorderedEventList
-                0x00003486                xTaskRemoveFromEventList
-                0x000035d0                vTaskRemoveFromUnorderedEventList
-                0x000036e2                vTaskSetTimeOutState
-                0x0000370e                vTaskInternalSetTimeOutState
-                0x00003730                xTaskCheckForTimeOut
-                0x000037d4                vTaskMissedYield
-                0x000037dc                xTaskGetCurrentTaskHandle
-                0x000037e6                uxTaskResetEventItemValue
-                0x00003828                ulTaskGenericNotifyTake
-                0x00003922                xTaskGenericNotifyWait
-                0x00003a72                xTaskGenericNotify
-                0x00003c40                xTaskGenericNotifyFromISR
-                0x00003e5e                vTaskGenericNotifyGiveFromISR
-                0x00003fb4                xTaskGenericNotifyStateClear
-                0x00003fe0                ulTaskGenericNotifyValueClear
- .text          0x0000403c        0x0 timers.o
- .text          0x0000403c      0x2b4 port.o
-                0x0000403c                pxPortInitialiseStack
-                0x00004114                xPortStartScheduler
-                0x0000417e                vPortEndScheduler
-                0x00004180                vPortYield
-                0x00004232                vPortYieldFromTick
-                0x000042ea                __vector_7
- .text          0x000042f0        0x0 c:/users/aelnaqee/documents/projects/toolchains/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_udivmodsi4.o)
- .text          0x000042f0        0x0 c:/users/aelnaqee/documents/projects/toolchains/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_exit.o)
- .text          0x000042f0        0x0 c:/users/aelnaqee/documents/projects/toolchains/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_copy_data.o)
- .text          0x000042f0        0x0 c:/users/aelnaqee/documents/projects/toolchains/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_clear_bss.o)
- .text          0x000042f0        0x0 c:/users/aelnaqee/documents/projects/toolchains/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_umulhisi3.o)
- .text          0x000042f0        0x0 c:/users/aelnaqee/documents/projects/toolchains/avr/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libc.a(memcpy.o)
-                0x000042f0                . = ALIGN (0x2)
+ .text          0x000000000000008e        0x4 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/crtatmega32.o
+                0x000000000000008e                __vector_12
+                0x000000000000008e                __bad_interrupt
+                0x000000000000008e                __vector_6
+                0x000000000000008e                __vector_11
+                0x000000000000008e                __vector_13
+                0x000000000000008e                __vector_17
+                0x000000000000008e                __vector_19
+                0x000000000000008e                __vector_5
+                0x000000000000008e                __vector_4
+                0x000000000000008e                __vector_9
+                0x000000000000008e                __vector_15
+                0x000000000000008e                __vector_8
+                0x000000000000008e                __vector_14
+                0x000000000000008e                __vector_16
+                0x000000000000008e                __vector_18
+                0x000000000000008e                __vector_20
+ .text          0x0000000000000092      0x13e main.o
+                0x0000000000000092                taskInit
+                0x00000000000000cc                pbTask
+                0x000000000000015a                ledTask
+ .text          0x00000000000001d0       0xe2 MDIO_program.o
+                0x00000000000001d0                mdio_setPinStatus
+                0x0000000000000234                mdio_setPinValue
+                0x0000000000000272                mdio_togglePinValue
+                0x000000000000028c                mdio_getPinValue
+ .text          0x00000000000002b2      0x194 MEXTI_program.o
+                0x00000000000002b2                mexti_enableExternalInterrupt
+                0x00000000000002d2                mexti_disableExternalInterrupt
+                0x00000000000002f2                mexti_attachISR
+                0x0000000000000350                __vector_1
+                0x00000000000003a2                __vector_2
+                0x00000000000003f4                __vector_3
+ .text          0x0000000000000446       0x44 MADC_program.o
+                0x0000000000000446                madc_init
+                0x0000000000000460                madc_singleConversion
+ .text          0x000000000000048a      0x2a2 MTIMER_program.o
+                0x00000000000004ac                mtimer_init
+                0x00000000000004d8                mtimer_delayMs_synchronous
+                0x0000000000000524                mtimer_delayMs_asynchronous
+                0x0000000000000564                mtimer_runPWM_signal
+                0x000000000000056c                mtimer_startPWM_signal
+                0x000000000000057e                mtimer_stopPWM_signal
+                0x000000000000059c                mtimer_getSignal_duty_and_freq
+                0x000000000000067c                __vector_10
+ .text          0x000000000000072c       0x44 MUART_program.o
+                0x000000000000072c                muart_init
+                0x000000000000073c                muart_sendByte
+                0x000000000000074a                muart_recvByte
+                0x0000000000000756                muart_sendStream
+ .text          0x0000000000000770       0x56 MSPI_program.o
+                0x0000000000000770                mspi_init
+                0x000000000000079a                mspi_masterSendRecv_byte
+                0x00000000000007a8                mspi_slaveSendRecv_byte
+ .text          0x00000000000007c6       0x6c MTWI_program.o
+                0x00000000000007c6                mtwi_init
+                0x00000000000007ce                mtwi_start
+                0x00000000000007f4                mtwi_stop
+                0x0000000000000800                mtwi_masterSend
+                0x000000000000080e                mtwi_masterRecv_ACK
+                0x0000000000000820                mtwi_masterRecv_NACK
+ .text          0x0000000000000832       0x8a HLED_program.o
+                0x0000000000000832                hled_init
+                0x0000000000000856                hled_ledValueON
+                0x000000000000087a                hled_ledValueOFF
+                0x000000000000089e                hled_toggleLedValue
+ .text          0x00000000000008bc       0x44 HPBUTT_program.o
+                0x00000000000008bc                hpbutt_init
+                0x00000000000008e0                hpbutt_getStatus
+ .text          0x0000000000000900       0xc4 HSEV_SEG_program.o
+                0x0000000000000900                hsev_seg_init
+                0x000000000000094a                hsev_seg_enable
+                0x0000000000000964                hsev_seg_disable
+                0x000000000000097e                hsev_seg_displayNumber
+ .text          0x00000000000009c4      0x27a HLCD_program.o
+                0x0000000000000b58                hlcd_init
+                0x0000000000000c1a                hlcd_displayCharacter
+                0x0000000000000c1e                hlcd_displayString
+                0x0000000000000c36                hlcd_displayPosition
+ .text          0x0000000000000c3e      0x106 HKPD_program.o
+                0x0000000000000c3e                hkpd_init
+                0x0000000000000c5c                hkpd_getPressedButton
+ .text          0x0000000000000d44      0x15c HEEP_program.o
+                0x0000000000000d44                heeprom_init
+                0x0000000000000d48                heeprom_writeByte
+                0x0000000000000d84                heeprom_writeDataStream
+                0x0000000000000dda                heeprom_readByte
+                0x0000000000000e2a                heeprom_readDataStream
+ .text          0x0000000000000ea0       0x44 STTS_program.o
+                0x0000000000000ea0                stts_init
+                0x0000000000000eb2                stts_run
+                0x0000000000000ed4                stts_addTask
+ .text          0x0000000000000ee4        0x0 croutine.o
+ .text          0x0000000000000ee4      0x48c event_groups.o
+                0x0000000000000ee4                xEventGroupCreate
+                0x0000000000000f0e                xEventGroupWaitBits
+                0x0000000000001076                xEventGroupClearBits
+                0x00000000000010b0                xEventGroupGetBitsFromISR
+                0x00000000000010bc                xEventGroupSetBits
+                0x00000000000011b8                xEventGroupSync
+                0x0000000000001338                vEventGroupDelete
+                0x0000000000001368                vEventGroupSetBitsCallback
+                0x000000000000136c                vEventGroupClearBitsCallback
+ .text          0x0000000000001370       0x86 heap_1.o
+                0x0000000000001370                pvPortMalloc
+                0x00000000000013d8                vPortFree
+                0x00000000000013da                vPortInitialiseBlocks
+                0x00000000000013e4                xPortGetFreeHeapSize
+ .text          0x00000000000013f6      0x13c list.o
+                0x00000000000013f6                vListInitialise
+                0x0000000000001418                vListInitialiseItem
+                0x0000000000001420                vListInsertEnd
+                0x0000000000001462                vListInsert
+                0x00000000000014ea                uxListRemove
+ .text          0x0000000000001532      0x88c queue.o
+                0x0000000000001688                xQueueGenericReset
+                0x0000000000001718                xQueueGenericCreate
+                0x0000000000001768                xQueueGenericSend
+                0x00000000000018a8                xQueueGenericSendFromISR
+                0x0000000000001908                xQueueGiveFromISR
+                0x000000000000194e                xQueueReceive
+                0x0000000000001a8a                xQueueSemaphoreTake
+                0x0000000000001bae                xQueuePeek
+                0x0000000000001cea                xQueueReceiveFromISR
+                0x0000000000001d48                xQueuePeekFromISR
+                0x0000000000001d76                uxQueueMessagesWaiting
+                0x0000000000001d86                uxQueueSpacesAvailable
+                0x0000000000001d9a                uxQueueMessagesWaitingFromISR
+                0x0000000000001da0                vQueueDelete
+                0x0000000000001da4                xQueueIsQueueEmptyFromISR
+                0x0000000000001db0                xQueueIsQueueFullFromISR
+ .text          0x0000000000001dbe      0x858 stream_buffer.o
+                0x000000000000200e                xStreamBufferGenericCreate
+                0x000000000000207a                vStreamBufferDelete
+                0x0000000000002090                xStreamBufferReset
+                0x00000000000020da                xStreamBufferSetTriggerLevel
+                0x00000000000020fc                xStreamBufferSpacesAvailable
+                0x0000000000002130                xStreamBufferBytesAvailable
+                0x0000000000002134                xStreamBufferSend
+                0x00000000000022c4                xStreamBufferSendFromISR
+                0x0000000000002350                xStreamBufferReceive
+                0x0000000000002456                xStreamBufferNextMessageLengthBytes
+                0x00000000000024a4                xStreamBufferReceiveFromISR
+                0x0000000000002530                xStreamBufferIsEmpty
+                0x0000000000002546                xStreamBufferIsFull
+                0x0000000000002572                xStreamBufferSendCompletedFromISR
+                0x00000000000025c4                xStreamBufferReceiveCompletedFromISR
+ .text          0x0000000000002616     0x1a68 tasks.o
+                0x00000000000027f8                xTaskCreate
+                0x0000000000002a3c                vTaskDelete
+                0x0000000000002af4                vTaskResume
+                0x0000000000002bb6                xTaskResumeFromISR
+                0x0000000000002c80                vTaskStartScheduler
+                0x0000000000002ce4                vTaskEndScheduler
+                0x0000000000002cee                vTaskSuspendAll
+                0x0000000000002cfa                xTaskGetTickCount
+                0x0000000000002d16                xTaskGetTickCountFromISR
+                0x0000000000002d28                uxTaskGetNumberOfTasks
+                0x0000000000002d2e                pcTaskGetName
+                0x0000000000002d3e                xTaskIncrementTick
+                0x0000000000002f92                xTaskResumeAll
+                0x000000000000314a                xTaskDelayUntil
+                0x0000000000003208                vTaskDelay
+                0x0000000000003242                xTaskCatchUpTicks
+                0x0000000000003286                vTaskSwitchContext
+                0x000000000000330c                vTaskSuspend
+                0x00000000000033b8                vTaskPlaceOnEventList
+                0x00000000000033e6                vTaskPlaceOnUnorderedEventList
+                0x000000000000347a                xTaskRemoveFromEventList
+                0x00000000000035d2                vTaskRemoveFromUnorderedEventList
+                0x00000000000036f2                vTaskSetTimeOutState
+                0x000000000000371e                vTaskInternalSetTimeOutState
+                0x0000000000003740                xTaskCheckForTimeOut
+                0x00000000000037e4                vTaskMissedYield
+                0x00000000000037ec                xTaskGetCurrentTaskHandle
+                0x00000000000037f6                uxTaskResetEventItemValue
+                0x0000000000003862                ulTaskGenericNotifyTake
+                0x000000000000395a                xTaskGenericNotifyWait
+                0x0000000000003aaa                xTaskGenericNotify
+                0x0000000000003c70                xTaskGenericNotifyFromISR
+                0x0000000000003e88                vTaskGenericNotifyGiveFromISR
+                0x0000000000003fea                xTaskGenericNotifyStateClear
+                0x0000000000004016                ulTaskGenericNotifyValueClear
+ .text          0x000000000000407e        0x0 timers.o
+ .text          0x000000000000407e      0x2b4 port.o
+                0x000000000000407e                pxPortInitialiseStack
+                0x0000000000004156                xPortStartScheduler
+                0x00000000000041c0                vPortEndScheduler
+                0x00000000000041c2                vPortYield
+                0x0000000000004274                vPortYieldFromTick
+                0x000000000000432c                __vector_7
+ .text          0x0000000000004332        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_udivmodsi4.o)
+ .text          0x0000000000004332        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_exit.o)
+ .text          0x0000000000004332        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_copy_data.o)
+ .text          0x0000000000004332        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_clear_bss.o)
+ .text          0x0000000000004332        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_umulhisi3.o)
+ .text          0x0000000000004332        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(memcpy.o)
+                0x0000000000004332                . = ALIGN (0x2)
  *(.text.*)
- .text.startup  0x000042f0       0x4c main.o
-                0x000042f0                main
+ .text.startup  0x0000000000004332       0x4c main.o
+                0x0000000000004332                main
  .text.libgcc.mul
-                0x0000433c        0x0 c:/users/aelnaqee/documents/projects/toolchains/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_udivmodsi4.o)
+                0x000000000000437e        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_udivmodsi4.o)
  .text.libgcc.div
-                0x0000433c       0x44 c:/users/aelnaqee/documents/projects/toolchains/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_udivmodsi4.o)
-                0x0000433c                __udivmodsi4
- .text.libgcc   0x00004380        0x0 c:/users/aelnaqee/documents/projects/toolchains/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_udivmodsi4.o)
+                0x000000000000437e       0x44 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_udivmodsi4.o)
+                0x000000000000437e                __udivmodsi4
+ .text.libgcc   0x00000000000043c2        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_udivmodsi4.o)
  .text.libgcc.prologue
-                0x00004380        0x0 c:/users/aelnaqee/documents/projects/toolchains/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_udivmodsi4.o)
+                0x00000000000043c2        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_udivmodsi4.o)
  .text.libgcc.builtins
-                0x00004380        0x0 c:/users/aelnaqee/documents/projects/toolchains/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_udivmodsi4.o)
+                0x00000000000043c2        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_udivmodsi4.o)
  .text.libgcc.fmul
-                0x00004380        0x0 c:/users/aelnaqee/documents/projects/toolchains/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_udivmodsi4.o)
+                0x00000000000043c2        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_udivmodsi4.o)
  .text.libgcc.fixed
-                0x00004380        0x0 c:/users/aelnaqee/documents/projects/toolchains/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_udivmodsi4.o)
+                0x00000000000043c2        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_udivmodsi4.o)
  .text.libgcc.mul
-                0x00004380        0x0 c:/users/aelnaqee/documents/projects/toolchains/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_exit.o)
+                0x00000000000043c2        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_exit.o)
  .text.libgcc.div
-                0x00004380        0x0 c:/users/aelnaqee/documents/projects/toolchains/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_exit.o)
- .text.libgcc   0x00004380        0x0 c:/users/aelnaqee/documents/projects/toolchains/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_exit.o)
+                0x00000000000043c2        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_exit.o)
+ .text.libgcc   0x00000000000043c2        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_exit.o)
  .text.libgcc.prologue
-                0x00004380        0x0 c:/users/aelnaqee/documents/projects/toolchains/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_exit.o)
+                0x00000000000043c2        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_exit.o)
  .text.libgcc.builtins
-                0x00004380        0x0 c:/users/aelnaqee/documents/projects/toolchains/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_exit.o)
+                0x00000000000043c2        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_exit.o)
  .text.libgcc.fmul
-                0x00004380        0x0 c:/users/aelnaqee/documents/projects/toolchains/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_exit.o)
+                0x00000000000043c2        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_exit.o)
  .text.libgcc.fixed
-                0x00004380        0x0 c:/users/aelnaqee/documents/projects/toolchains/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_exit.o)
+                0x00000000000043c2        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_exit.o)
  .text.libgcc.mul
-                0x00004380        0x0 c:/users/aelnaqee/documents/projects/toolchains/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_copy_data.o)
+                0x00000000000043c2        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_copy_data.o)
  .text.libgcc.div
-                0x00004380        0x0 c:/users/aelnaqee/documents/projects/toolchains/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_copy_data.o)
- .text.libgcc   0x00004380        0x0 c:/users/aelnaqee/documents/projects/toolchains/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_copy_data.o)
+                0x00000000000043c2        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_copy_data.o)
+ .text.libgcc   0x00000000000043c2        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_copy_data.o)
  .text.libgcc.prologue
-                0x00004380        0x0 c:/users/aelnaqee/documents/projects/toolchains/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_copy_data.o)
+                0x00000000000043c2        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_copy_data.o)
  .text.libgcc.builtins
-                0x00004380        0x0 c:/users/aelnaqee/documents/projects/toolchains/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_copy_data.o)
+                0x00000000000043c2        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_copy_data.o)
  .text.libgcc.fmul
-                0x00004380        0x0 c:/users/aelnaqee/documents/projects/toolchains/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_copy_data.o)
+                0x00000000000043c2        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_copy_data.o)
  .text.libgcc.fixed
-                0x00004380        0x0 c:/users/aelnaqee/documents/projects/toolchains/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_copy_data.o)
+                0x00000000000043c2        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_copy_data.o)
  .text.libgcc.mul
-                0x00004380        0x0 c:/users/aelnaqee/documents/projects/toolchains/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_clear_bss.o)
+                0x00000000000043c2        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_clear_bss.o)
  .text.libgcc.div
-                0x00004380        0x0 c:/users/aelnaqee/documents/projects/toolchains/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_clear_bss.o)
- .text.libgcc   0x00004380        0x0 c:/users/aelnaqee/documents/projects/toolchains/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_clear_bss.o)
+                0x00000000000043c2        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_clear_bss.o)
+ .text.libgcc   0x00000000000043c2        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_clear_bss.o)
  .text.libgcc.prologue
-                0x00004380        0x0 c:/users/aelnaqee/documents/projects/toolchains/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_clear_bss.o)
+                0x00000000000043c2        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_clear_bss.o)
  .text.libgcc.builtins
-                0x00004380        0x0 c:/users/aelnaqee/documents/projects/toolchains/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_clear_bss.o)
+                0x00000000000043c2        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_clear_bss.o)
  .text.libgcc.fmul
-                0x00004380        0x0 c:/users/aelnaqee/documents/projects/toolchains/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_clear_bss.o)
+                0x00000000000043c2        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_clear_bss.o)
  .text.libgcc.fixed
-                0x00004380        0x0 c:/users/aelnaqee/documents/projects/toolchains/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_clear_bss.o)
+                0x00000000000043c2        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_clear_bss.o)
  .text.libgcc.mul
-                0x00004380       0x1e c:/users/aelnaqee/documents/projects/toolchains/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_umulhisi3.o)
-                0x00004380                __umulhisi3
+                0x00000000000043c2       0x1e /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_umulhisi3.o)
+                0x00000000000043c2                __umulhisi3
  .text.libgcc.div
-                0x0000439e        0x0 c:/users/aelnaqee/documents/projects/toolchains/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_umulhisi3.o)
- .text.libgcc   0x0000439e        0x0 c:/users/aelnaqee/documents/projects/toolchains/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_umulhisi3.o)
+                0x00000000000043e0        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_umulhisi3.o)
+ .text.libgcc   0x00000000000043e0        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_umulhisi3.o)
  .text.libgcc.prologue
-                0x0000439e        0x0 c:/users/aelnaqee/documents/projects/toolchains/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_umulhisi3.o)
+                0x00000000000043e0        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_umulhisi3.o)
  .text.libgcc.builtins
-                0x0000439e        0x0 c:/users/aelnaqee/documents/projects/toolchains/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_umulhisi3.o)
+                0x00000000000043e0        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_umulhisi3.o)
  .text.libgcc.fmul
-                0x0000439e        0x0 c:/users/aelnaqee/documents/projects/toolchains/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_umulhisi3.o)
+                0x00000000000043e0        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_umulhisi3.o)
  .text.libgcc.fixed
-                0x0000439e        0x0 c:/users/aelnaqee/documents/projects/toolchains/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_umulhisi3.o)
+                0x00000000000043e0        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_umulhisi3.o)
  .text.avr-libc
-                0x0000439e       0x12 c:/users/aelnaqee/documents/projects/toolchains/avr/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libc.a(memcpy.o)
-                0x0000439e                memcpy
-                0x000043b0                . = ALIGN (0x2)
+                0x00000000000043e0       0x12 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(memcpy.o)
+                0x00000000000043e0                memcpy
+                0x00000000000043f2                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x000043b0        0x0 c:/users/aelnaqee/documents/projects/toolchains/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_exit.o)
-                0x000043b0                _exit
-                0x000043b0                exit
+ .fini9         0x00000000000043f2        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_exit.o)
+                0x00000000000043f2                exit
+                0x00000000000043f2                _exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -516,115 +517,115 @@ END GROUP
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x000043b0        0x4 c:/users/aelnaqee/documents/projects/toolchains/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_exit.o)
+ .fini0         0x00000000000043f2        0x4 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_exit.o)
  *(.fini0)
-                0x000043b4                _etext = .
+                0x00000000000043f6                _etext = .
 
-.data           0x00800060       0x3a load address 0x000043b4
-                0x00800060                PROVIDE (__data_start, .)
+.data           0x0000000000800060       0x3a load address 0x00000000000043f6
+                0x0000000000800060                PROVIDE (__data_start, .)
  *(.data)
- .data          0x00800060        0x0 c:/users/aelnaqee/documents/projects/toolchains/avr/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5/crtatmega32.o
- .data          0x00800060        0x0 main.o
- .data          0x00800060        0x0 MDIO_program.o
- .data          0x00800060        0x0 MEXTI_program.o
- .data          0x00800060        0x0 MADC_program.o
- .data          0x00800060        0x0 MTIMER_program.o
- .data          0x00800060        0x0 MUART_program.o
- .data          0x00800060        0x0 MSPI_program.o
- .data          0x00800060        0x0 MTWI_program.o
- .data          0x00800060        0x0 HLED_program.o
- .data          0x00800060        0x0 HPBUTT_program.o
- .data          0x00800060        0x0 HSEV_SEG_program.o
- .data          0x00800060        0x0 HLCD_program.o
- .data          0x00800060        0x0 HKPD_program.o
- .data          0x00800060        0x0 HEEP_program.o
- .data          0x00800060        0x0 STTS_program.o
- .data          0x00800060        0x0 croutine.o
- .data          0x00800060        0x0 event_groups.o
- .data          0x00800060        0x0 heap_1.o
- .data          0x00800060        0x0 list.o
- .data          0x00800060        0x0 queue.o
- .data          0x00800060        0x0 stream_buffer.o
- .data          0x00800060        0x1 tasks.o
-                0x00800060                uxTopUsedPriority
- .data          0x00800061        0x0 timers.o
- .data          0x00800061        0x0 port.o
- .data          0x00800061        0x0 c:/users/aelnaqee/documents/projects/toolchains/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_udivmodsi4.o)
- .data          0x00800061        0x0 c:/users/aelnaqee/documents/projects/toolchains/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_exit.o)
- .data          0x00800061        0x0 c:/users/aelnaqee/documents/projects/toolchains/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_copy_data.o)
- .data          0x00800061        0x0 c:/users/aelnaqee/documents/projects/toolchains/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_clear_bss.o)
- .data          0x00800061        0x0 c:/users/aelnaqee/documents/projects/toolchains/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_umulhisi3.o)
- .data          0x00800061        0x0 c:/users/aelnaqee/documents/projects/toolchains/avr/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libc.a(memcpy.o)
+ .data          0x0000000000800060        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/crtatmega32.o
+ .data          0x0000000000800060        0x0 main.o
+ .data          0x0000000000800060        0x0 MDIO_program.o
+ .data          0x0000000000800060        0x0 MEXTI_program.o
+ .data          0x0000000000800060        0x0 MADC_program.o
+ .data          0x0000000000800060        0x0 MTIMER_program.o
+ .data          0x0000000000800060        0x0 MUART_program.o
+ .data          0x0000000000800060        0x0 MSPI_program.o
+ .data          0x0000000000800060        0x0 MTWI_program.o
+ .data          0x0000000000800060        0x0 HLED_program.o
+ .data          0x0000000000800060        0x0 HPBUTT_program.o
+ .data          0x0000000000800060        0x0 HSEV_SEG_program.o
+ .data          0x0000000000800060        0x0 HLCD_program.o
+ .data          0x0000000000800060        0x0 HKPD_program.o
+ .data          0x0000000000800060        0x0 HEEP_program.o
+ .data          0x0000000000800060        0x0 STTS_program.o
+ .data          0x0000000000800060        0x0 croutine.o
+ .data          0x0000000000800060        0x0 event_groups.o
+ .data          0x0000000000800060        0x0 heap_1.o
+ .data          0x0000000000800060        0x0 list.o
+ .data          0x0000000000800060        0x0 queue.o
+ .data          0x0000000000800060        0x0 stream_buffer.o
+ .data          0x0000000000800060        0x1 tasks.o
+                0x0000000000800060                uxTopUsedPriority
+ .data          0x0000000000800061        0x0 timers.o
+ .data          0x0000000000800061        0x0 port.o
+ .data          0x0000000000800061        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_udivmodsi4.o)
+ .data          0x0000000000800061        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_exit.o)
+ .data          0x0000000000800061        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_copy_data.o)
+ .data          0x0000000000800061        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_clear_bss.o)
+ .data          0x0000000000800061        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_umulhisi3.o)
+ .data          0x0000000000800061        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(memcpy.o)
  *(.data*)
  *(.gnu.linkonce.d*)
  *(.rodata)
- .rodata        0x00800061       0x18 MDIO_program.o
- .rodata        0x00800079       0x10 HKPD_program.o
+ .rodata        0x0000000000800061       0x18 MDIO_program.o
+ .rodata        0x0000000000800079       0x10 HKPD_program.o
  *(.rodata*)
  .rodata.str1.1
-                0x00800089        0xb main.o
+                0x0000000000800089        0xb main.o
  .rodata.str1.1
-                0x00800094        0x5 tasks.o
+                0x0000000000800094        0x5 tasks.o
  *(.gnu.linkonce.r*)
-                0x0080009a                . = ALIGN (0x2)
- *fill*         0x00800099        0x1 
-                0x0080009a                _edata = .
-                0x0080009a                PROVIDE (__data_end, .)
+                0x000000000080009a                . = ALIGN (0x2)
+ *fill*         0x0000000000800099        0x1 
+                0x000000000080009a                _edata = .
+                0x000000000080009a                PROVIDE (__data_end, .)
 
-.bss            0x0080009a      0x689
-                0x0080009a                PROVIDE (__bss_start, .)
+.bss            0x000000000080009a      0x689
+                0x000000000080009a                PROVIDE (__bss_start, .)
  *(.bss)
- .bss           0x0080009a        0x0 c:/users/aelnaqee/documents/projects/toolchains/avr/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5/crtatmega32.o
- .bss           0x0080009a        0x0 main.o
- .bss           0x0080009a        0x0 MDIO_program.o
- .bss           0x0080009a        0x6 MEXTI_program.o
- .bss           0x008000a0        0x0 MADC_program.o
- .bss           0x008000a0        0xd MTIMER_program.o
- .bss           0x008000ad        0x0 MUART_program.o
- .bss           0x008000ad        0x1 MSPI_program.o
- .bss           0x008000ae        0x0 MTWI_program.o
- .bss           0x008000ae        0x0 HLED_program.o
- .bss           0x008000ae        0x0 HPBUTT_program.o
- .bss           0x008000ae        0x0 HSEV_SEG_program.o
- .bss           0x008000ae        0x0 HLCD_program.o
- .bss           0x008000ae        0x0 HKPD_program.o
- .bss           0x008000ae        0x0 HEEP_program.o
- .bss           0x008000ae        0x5 STTS_program.o
- .bss           0x008000b3        0x0 croutine.o
- .bss           0x008000b3        0x0 event_groups.o
- .bss           0x008000b3      0x5e0 heap_1.o
- .bss           0x00800693        0x0 list.o
- .bss           0x00800693        0x0 queue.o
- .bss           0x00800693        0x0 stream_buffer.o
- .bss           0x00800693       0x8a tasks.o
-                0x00800693                pxCurrentTCB
- .bss           0x0080071d        0x0 timers.o
- .bss           0x0080071d        0x0 port.o
- .bss           0x0080071d        0x0 c:/users/aelnaqee/documents/projects/toolchains/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_udivmodsi4.o)
- .bss           0x0080071d        0x0 c:/users/aelnaqee/documents/projects/toolchains/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_exit.o)
- .bss           0x0080071d        0x0 c:/users/aelnaqee/documents/projects/toolchains/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_copy_data.o)
- .bss           0x0080071d        0x0 c:/users/aelnaqee/documents/projects/toolchains/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_clear_bss.o)
- .bss           0x0080071d        0x0 c:/users/aelnaqee/documents/projects/toolchains/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_umulhisi3.o)
- .bss           0x0080071d        0x0 c:/users/aelnaqee/documents/projects/toolchains/avr/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libc.a(memcpy.o)
+ .bss           0x000000000080009a        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/crtatmega32.o
+ .bss           0x000000000080009a        0x0 main.o
+ .bss           0x000000000080009a        0x0 MDIO_program.o
+ .bss           0x000000000080009a        0x6 MEXTI_program.o
+ .bss           0x00000000008000a0        0x0 MADC_program.o
+ .bss           0x00000000008000a0        0xd MTIMER_program.o
+ .bss           0x00000000008000ad        0x0 MUART_program.o
+ .bss           0x00000000008000ad        0x1 MSPI_program.o
+ .bss           0x00000000008000ae        0x0 MTWI_program.o
+ .bss           0x00000000008000ae        0x0 HLED_program.o
+ .bss           0x00000000008000ae        0x0 HPBUTT_program.o
+ .bss           0x00000000008000ae        0x0 HSEV_SEG_program.o
+ .bss           0x00000000008000ae        0x0 HLCD_program.o
+ .bss           0x00000000008000ae        0x0 HKPD_program.o
+ .bss           0x00000000008000ae        0x0 HEEP_program.o
+ .bss           0x00000000008000ae        0x5 STTS_program.o
+ .bss           0x00000000008000b3        0x0 croutine.o
+ .bss           0x00000000008000b3        0x0 event_groups.o
+ .bss           0x00000000008000b3      0x5e0 heap_1.o
+ .bss           0x0000000000800693        0x0 list.o
+ .bss           0x0000000000800693        0x0 queue.o
+ .bss           0x0000000000800693        0x0 stream_buffer.o
+ .bss           0x0000000000800693       0x8a tasks.o
+                0x0000000000800693                pxCurrentTCB
+ .bss           0x000000000080071d        0x0 timers.o
+ .bss           0x000000000080071d        0x0 port.o
+ .bss           0x000000000080071d        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_udivmodsi4.o)
+ .bss           0x000000000080071d        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_exit.o)
+ .bss           0x000000000080071d        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_copy_data.o)
+ .bss           0x000000000080071d        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_clear_bss.o)
+ .bss           0x000000000080071d        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_umulhisi3.o)
+ .bss           0x000000000080071d        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(memcpy.o)
  *(.bss*)
  *(COMMON)
- COMMON         0x0080071d        0x6 main.o
-                0x0080071d                xEventGroupBits
-                0x00800721                xEventGroup_handler
-                0x00800723                PROVIDE (__bss_end, .)
-                0x000043b4                __data_load_start = LOADADDR (.data)
-                0x000043ee                __data_load_end = (__data_load_start + SIZEOF (.data))
+ COMMON         0x000000000080071d        0x6 main.o
+                0x000000000080071d                xEventGroupBits
+                0x0000000000800721                xEventGroup_handler
+                0x0000000000800723                PROVIDE (__bss_end, .)
+                0x00000000000043f6                __data_load_start = LOADADDR (.data)
+                0x0000000000004430                __data_load_end = (__data_load_start + SIZEOF (.data))
 
-.noinit         0x00800723        0x0
-                [!provide]                PROVIDE (__noinit_start, .)
+.noinit         0x0000000000800723        0x0
+                [!provide]                        PROVIDE (__noinit_start, .)
  *(.noinit*)
-                [!provide]                PROVIDE (__noinit_end, .)
-                0x00800723                _end = .
-                [!provide]                PROVIDE (__heap_start, .)
+                [!provide]                        PROVIDE (__noinit_end, .)
+                0x0000000000800723                _end = .
+                [!provide]                        PROVIDE (__heap_start, .)
 
-.eeprom         0x00810000        0x0
+.eeprom         0x0000000000810000        0x0
  *(.eeprom*)
-                0x00810000                __eeprom_end = .
+                0x0000000000810000                __eeprom_end = .
 
 .fuse
  *(.fuse)
@@ -659,38 +660,38 @@ END GROUP
 .stab.indexstr
  *(.stab.indexstr)
 
-.comment        0x00000000       0x11
+.comment        0x0000000000000000       0x11
  *(.comment)
- .comment       0x00000000       0x11 main.o
-                                 0x12 (size before relaxing)
- .comment       0x00000011       0x12 MDIO_program.o
- .comment       0x00000011       0x12 MEXTI_program.o
- .comment       0x00000011       0x12 MADC_program.o
- .comment       0x00000011       0x12 MTIMER_program.o
- .comment       0x00000011       0x12 MUART_program.o
- .comment       0x00000011       0x12 MSPI_program.o
- .comment       0x00000011       0x12 MTWI_program.o
- .comment       0x00000011       0x12 HLED_program.o
- .comment       0x00000011       0x12 HPBUTT_program.o
- .comment       0x00000011       0x12 HSEV_SEG_program.o
- .comment       0x00000011       0x12 HLCD_program.o
- .comment       0x00000011       0x12 HKPD_program.o
- .comment       0x00000011       0x12 HEEP_program.o
- .comment       0x00000011       0x12 STTS_program.o
- .comment       0x00000011       0x12 croutine.o
- .comment       0x00000011       0x12 event_groups.o
- .comment       0x00000011       0x12 heap_1.o
- .comment       0x00000011       0x12 list.o
- .comment       0x00000011       0x12 queue.o
- .comment       0x00000011       0x12 stream_buffer.o
- .comment       0x00000011       0x12 tasks.o
- .comment       0x00000011       0x12 timers.o
- .comment       0x00000011       0x12 port.o
+ .comment       0x0000000000000000       0x11 main.o
+                                         0x12 (size before relaxing)
+ .comment       0x0000000000000011       0x12 MDIO_program.o
+ .comment       0x0000000000000011       0x12 MEXTI_program.o
+ .comment       0x0000000000000011       0x12 MADC_program.o
+ .comment       0x0000000000000011       0x12 MTIMER_program.o
+ .comment       0x0000000000000011       0x12 MUART_program.o
+ .comment       0x0000000000000011       0x12 MSPI_program.o
+ .comment       0x0000000000000011       0x12 MTWI_program.o
+ .comment       0x0000000000000011       0x12 HLED_program.o
+ .comment       0x0000000000000011       0x12 HPBUTT_program.o
+ .comment       0x0000000000000011       0x12 HSEV_SEG_program.o
+ .comment       0x0000000000000011       0x12 HLCD_program.o
+ .comment       0x0000000000000011       0x12 HKPD_program.o
+ .comment       0x0000000000000011       0x12 HEEP_program.o
+ .comment       0x0000000000000011       0x12 STTS_program.o
+ .comment       0x0000000000000011       0x12 croutine.o
+ .comment       0x0000000000000011       0x12 event_groups.o
+ .comment       0x0000000000000011       0x12 heap_1.o
+ .comment       0x0000000000000011       0x12 list.o
+ .comment       0x0000000000000011       0x12 queue.o
+ .comment       0x0000000000000011       0x12 stream_buffer.o
+ .comment       0x0000000000000011       0x12 tasks.o
+ .comment       0x0000000000000011       0x12 timers.o
+ .comment       0x0000000000000011       0x12 port.o
 
 .note.gnu.avr.deviceinfo
-                0x00000000       0x3c
+                0x0000000000000000       0x3c
  .note.gnu.avr.deviceinfo
-                0x00000000       0x3c c:/users/aelnaqee/documents/projects/toolchains/avr/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5/crtatmega32.o
+                0x0000000000000000       0x3c /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/crtatmega32.o
 
 .note.gnu.build-id
  *(.note.gnu.build-id)
@@ -707,55 +708,30 @@ END GROUP
 .debug_sfnames
  *(.debug_sfnames)
 
-.debug_aranges  0x00000000       0xa0
+.debug_aranges
  *(.debug_aranges)
- .debug_aranges
-                0x00000000       0x20 c:/users/aelnaqee/documents/projects/toolchains/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_udivmodsi4.o)
- .debug_aranges
-                0x00000020       0x20 c:/users/aelnaqee/documents/projects/toolchains/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_exit.o)
- .debug_aranges
-                0x00000040       0x20 c:/users/aelnaqee/documents/projects/toolchains/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_copy_data.o)
- .debug_aranges
-                0x00000060       0x20 c:/users/aelnaqee/documents/projects/toolchains/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_clear_bss.o)
- .debug_aranges
-                0x00000080       0x20 c:/users/aelnaqee/documents/projects/toolchains/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_umulhisi3.o)
 
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000      0x88d
+.debug_info     0x0000000000000000      0x4e6
  *(.debug_info .gnu.linkonce.wi.*)
- .debug_info    0x00000000      0x4e6 c:/users/aelnaqee/documents/projects/toolchains/avr/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5/crtatmega32.o
- .debug_info    0x000004e6       0xbb c:/users/aelnaqee/documents/projects/toolchains/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_udivmodsi4.o)
- .debug_info    0x000005a1       0xbb c:/users/aelnaqee/documents/projects/toolchains/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_exit.o)
- .debug_info    0x0000065c       0xbb c:/users/aelnaqee/documents/projects/toolchains/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_copy_data.o)
- .debug_info    0x00000717       0xbb c:/users/aelnaqee/documents/projects/toolchains/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_clear_bss.o)
- .debug_info    0x000007d2       0xbb c:/users/aelnaqee/documents/projects/toolchains/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_umulhisi3.o)
+ .debug_info    0x0000000000000000      0x4e6 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/crtatmega32.o
 
-.debug_abbrev   0x00000000      0x507
+.debug_abbrev   0x0000000000000000      0x4a3
  *(.debug_abbrev)
- .debug_abbrev  0x00000000      0x4a3 c:/users/aelnaqee/documents/projects/toolchains/avr/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5/crtatmega32.o
- .debug_abbrev  0x000004a3       0x14 c:/users/aelnaqee/documents/projects/toolchains/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_udivmodsi4.o)
- .debug_abbrev  0x000004b7       0x14 c:/users/aelnaqee/documents/projects/toolchains/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_exit.o)
- .debug_abbrev  0x000004cb       0x14 c:/users/aelnaqee/documents/projects/toolchains/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_copy_data.o)
- .debug_abbrev  0x000004df       0x14 c:/users/aelnaqee/documents/projects/toolchains/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_clear_bss.o)
- .debug_abbrev  0x000004f3       0x14 c:/users/aelnaqee/documents/projects/toolchains/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_umulhisi3.o)
+ .debug_abbrev  0x0000000000000000      0x4a3 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/crtatmega32.o
 
-.debug_line     0x00000000      0x36c
+.debug_line     0x0000000000000000       0x1a
  *(.debug_line .debug_line.* .debug_line_end)
- .debug_line    0x00000000       0x1a c:/users/aelnaqee/documents/projects/toolchains/avr/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5/crtatmega32.o
- .debug_line    0x0000001a      0x122 c:/users/aelnaqee/documents/projects/toolchains/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_udivmodsi4.o)
- .debug_line    0x0000013c       0x62 c:/users/aelnaqee/documents/projects/toolchains/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_exit.o)
- .debug_line    0x0000019e       0x98 c:/users/aelnaqee/documents/projects/toolchains/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_copy_data.o)
- .debug_line    0x00000236       0x86 c:/users/aelnaqee/documents/projects/toolchains/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_clear_bss.o)
- .debug_line    0x000002bc       0xb0 c:/users/aelnaqee/documents/projects/toolchains/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_umulhisi3.o)
+ .debug_line    0x0000000000000000       0x1a /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/crtatmega32.o
 
 .debug_frame
  *(.debug_frame)
 
-.debug_str      0x00000000      0x196
+.debug_str      0x0000000000000000      0x196
  *(.debug_str)
- .debug_str     0x00000000      0x196 c:/users/aelnaqee/documents/projects/toolchains/avr/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5/crtatmega32.o
+ .debug_str     0x0000000000000000      0x196 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/crtatmega32.o
 
 .debug_loc
  *(.debug_loc)
