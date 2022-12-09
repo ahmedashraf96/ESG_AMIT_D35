@@ -52,7 +52,7 @@ void pbTask(void* pvParameters)
         }
         else
         {
-            /*Do nothing*/
+            CLEAR_BIT(eventsToSet, 0);
         }
 
         if(pb1_status == PRESSED)
@@ -61,7 +61,7 @@ void pbTask(void* pvParameters)
         }
         else
         {
-            /*Do nothing*/
+            CLEAR_BIT(eventsToSet, 1);
         }
 
         if(pb2_status == PRESSED)
@@ -70,7 +70,7 @@ void pbTask(void* pvParameters)
         }
         else
         {
-            /*Do nothing*/
+            CLEAR_BIT(eventsToSet, 2);
         }
 
         if(eventsToSet != 0)
@@ -79,7 +79,7 @@ void pbTask(void* pvParameters)
         }
         else
         {
-            /*Do nothing*/
+            xEventGroupClearBits(xEventGroup_handler, (LED0_EVENT | LED1_EVENT | LED2_EVENT));
         }
 
         vTaskDelay(100);
@@ -122,8 +122,6 @@ void ledTask(void* pvParameters)
         {
             /*Do nothing*/
         }
-
-        xEventGroupClearBits(xEventGroup_handler, (LED0_EVENT | LED1_EVENT | LED2_EVENT));
         
         vTaskDelay(100);
     }

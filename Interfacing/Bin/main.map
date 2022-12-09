@@ -242,7 +242,7 @@ END GROUP
  .text          0x00000092      0x13c main.o
                 0x00000092                taskInit
                 0x000000cc                pbTask
-                0x00000144                ledTask
+                0x00000158                ledTask
  .text          0x000001ce       0xe6 MDIO_program.o
                 0x000001ce                mdio_setPinStatus
                 0x00000236                mdio_setPinValue
